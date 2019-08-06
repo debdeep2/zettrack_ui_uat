@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "West Bengal",
+        "Dist" :[
+            { "Name" :"Hooghly"},
+            { "Name" :"Kolkata"},
+            { "Name" :"Howrha"},
+            { "Name" :"Midnapur"}
+        ]
+    },
+    {
+        "Name": "Uttar Pradesh",
+        "Dist" :[
+            { "Name" :"Agra"},
+            { "Name" :"Firozabad"},
+            { "Name" :"Mainpuri"},
+            { "Name" :"Mathura"}
+        ]
+    }
+]

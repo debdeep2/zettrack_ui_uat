@@ -41,7 +41,7 @@ module.exports = "<p>This is the About</p>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:left; color:rgb(255,255,255); background-color:rgb(33, 100, 243,1)  \">\r\n  <h1>\r\n    Welcome to <b>{{ title }}</b>\r\n  </h1>  \r\n</div>\r\n<div>\r\n  <a [routerLink]=\"['/home']\">Home</a>\r\n  ||\r\n  <a [routerLink]=\"['/about']\">About</a>\r\n  ||\r\n  <a [routerLink]=\"['/SuperStockist']\">Super Stockist</a>\r\n  ||\r\n  <a [routerLink]=\"['/Drisbutor']\">Drisbutor</a>\r\n  ||\r\n  <a [routerLink]=\"['/Retailer']\">Retailer</a>\r\n  ||\r\n  <a [routerLink]=\"['/BusinessAssociate']\">Business Associate</a>\r\n  ||\r\n  <a [routerLink]=\"['/Transaction']\">Transaction</a>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:left; color:rgb(255,255,255); background-color:rgb(56, 114, 240)  \">\r\n  <h3>\r\n    Welcome to  <b>{{ title }}</b>  \r\n   </h3>\r\n   <span style=\"float: right;padding-right: 100px;\">     \r\n    <a href=\"\" (click)=\"logOut()\" style=\"color: yellow; font-size: 14px; \" >Log Out</a>\r\n  </span>  \r\n   <span style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif\">\r\n    <span style=\"padding-right: 5px;\">\r\n      UserName :  {{LogInUser.email}}\r\n    </span>\r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Role :  {{LogInUser.roleName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n      CompanyName :  {{LogInUser.companyName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Name :  {{LogInUser.fname}} {{LogInUser.lname}}\r\n    </span>\r\n    \r\n      \r\n   </span>\r\n   \r\n    \r\n</div>\r\n<div>\r\n  <a [routerLink]=\"['/home']\">Home</a>\r\n  ||\r\n  <a [routerLink]=\"['/about']\">About</a>\r\n  ||\r\n  <a [routerLink]=\"['/SuperStockistList']\">Super Stockist</a>\r\n  ||\r\n  <a [routerLink]=\"['/distributorList']\">Drisbutor</a>\r\n  ||\r\n  <a [routerLink]=\"['/retailerList']\">Retailer</a>\r\n  ||\r\n  <a [routerLink]=\"['/BusinessAssociate']\">Business Associate</a>\r\n  ||\r\n  <a [routerLink]=\"['/Transaction']\">Transaction</a>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -56,6 +56,28 @@ module.exports = "<div class=\"container\" >\r\n    <span class=\"Header\">Busin
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/distributor-edit/distributor-edit.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/distributor-edit/distributor-edit.component.html ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <span class=\"Header\">Distributor</span>\n    <p></p>\n    <span>------------------------------------------</span>\n    <p></p>\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span>\n        <p></p>\n\n\n        <label>Fisrt Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.fname\">\n        <p></p>\n\n\n        <label>Last Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.lname\">\n        <p></p>\n\n\n        <label>Email</label>\n        <p></p>\n        <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.email\">\n        <p></p>        \n\n\n        <label>MobNo-Primary</label>\n        <p></p>\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessContactInformation.mobNoPrimary\">\n        <p></p>\n\n\n        <label>MobNo-Alternative</label>\n        <p></p>\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessContactInformation.mobNoAlternate\">\n\n\n    </div>\n\n\n\n\n    <div style=\"float: left; padding-top:20px;width: 50%; \">\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>\n        <p></p>\n\n        <label>OutLate Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.outLateName\">\n        <p></p>\n\n\n        <label>Country</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.country\">\n        <p></p>\n\n\n        <label>State</label>\n        <p></p>\n        <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.State\">-->\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.businessAddress.state\" (change)=\"onStateChange($event)\">\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\n            <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\n                {{states[i].Name}}\n            </option>\n        </select>\n        <p></p>\n        \n\n        <label>District</label>\n        <p></p>\n        <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.District\"> -->\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.businessAddress.district\">\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\n            <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\n                {{dists[i].Name}}\n            </option>\n        </select>\n        <p></p>\n\n\n        <label>Region</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.region\">\n        <p></p>\n\n\n        <label>Pin</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.pin\">\n\n    </div>\n    <br>\n    <div style=\"float:inherit;padding-top: 20px;\">\n        <a [routerLink]=\"['/distributorList']\" routerLinkActive=\"router-link-active\">Back</a>\n        ||\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\n                   style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\n    </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/distributor-list/distributor-list.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/distributor-list/distributor-list.component.html ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Distributor</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/distributorAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterByMatchText : searchText\">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/distributorEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delDistributor']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/distributor/distributor.component.html":
 /*!**********************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/distributor/distributor.component.html ***!
@@ -63,7 +85,7 @@ module.exports = "<div class=\"container\" >\r\n    <span class=\"Header\">Busin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" >\r\n    <span class=\"Header\">Distributor</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p> \r\n    <span class=\"SubHeader\">Select SuperStokist</span>   \r\n    <p></p>\r\n    <select id=\"userType\" name=\"userType\" style=\"width: 300px\">\r\n        <option value=\"0\">Select</option>\r\n        <option value=\"1\">SS1</option>\r\n        <option value=\"2\">SS2</option>\r\n        <option value=\"3\">SS3</option>\r\n        <option value=\"4\">SS4</option>\r\n        \r\n    </select> \r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span> \r\n         <p></p>\r\n    <label>Fisrt Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Last Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Primary</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Alternative</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>MobNo-Primary</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>MobNo-Alternative</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    </div>\r\n    <div  style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>        \r\n        <p></p>    \r\n       \r\n    <label>OutLate Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Country</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>State</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>District</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>Region</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">   \r\n    <p></p>\r\n    <label>Pin</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    </div> \r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n       \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Distributor. ...</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span>\r\n        <p></p>\r\n\r\n\r\n        <label>Fisrt Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.Fname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Last Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.Lname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Email</label>\r\n        <p></p>\r\n        <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.email\">\r\n        <p></p>\r\n\r\n\r\n        <label>Password</label>\r\n        <p></p>\r\n        <input type=\"password\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.password\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Primary</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessContactInformation.MobNoPrimary\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Alternative</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessContactInformation.MobNoAlternate\">\r\n\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n    <div style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>\r\n        <p></p>\r\n\r\n        <label>OutLate Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.OutLateName\">\r\n        <p></p>\r\n\r\n\r\n        <label>Country</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Country\">\r\n        <p></p>\r\n\r\n\r\n        <label>State</label>\r\n        <p></p>\r\n        <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.State\">-->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.BusinessAddress.State\" (change)=\"onStateChange($event)\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\r\n                {{states[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n        \r\n\r\n        <label>District</label>\r\n        <p></p>\r\n        <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.District\"> -->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.BusinessAddress.District\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\r\n                {{dists[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n\r\n\r\n        <label>Region</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Region\">\r\n        <p></p>\r\n\r\n\r\n        <label>Pin</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Pin\">\r\n\r\n    </div>\r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <a [routerLink]=\"['/distributorList']\" routerLinkActive=\"router-link-active\">Back</a>\r\n        ||\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\r\n                   style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -74,18 +96,40 @@ module.exports = "<div class=\"container\" >\r\n    <span class=\"Header\">Distr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>This is the Home</p>\r\n"
+module.exports = "\r\n<div>\r\n    <img src=\"../../assets/ZetTrackHomeImg.jpeg\">\r\n</div>"
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/login-component/login-component.component.html":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/login-component/login-component.component.html ***!
-  \******************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/login/login.component.html ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>login-component works!</p>\r\n<div>\r\nUserName : \r\n</div>\r\n<div>\r\n    PassWord : \r\n </div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<div>\n  <h1 style=\"text-align:center\">\n    \n  </h1>\n  <div class=\"login\">\n    <h2 class=\"login-header\">Log in</h2>\n    <form [formGroup]=\"loginForm\" class=\"login-container\" (ngSubmit)=\"login()\">\n  \n      <p [ngClass]=\"{ 'has-error': isSubmitted && formControls.email.errors }\">\n        <input type=\"email\" placeholder=\"Email\" formControlName=\"email\">\n      </p>\n  \n      <div *ngIf=\"isSubmitted && formControls.email.errors\" class=\"help-block\">\n        <div *ngIf=\"formControls.email.errors.required\">Email is required</div>\n      </div>\n  \n      <p [ngClass]=\"{ 'has-error': isSubmitted && formControls.password.errors }\">\n        <input type=\"password\" placeholder=\"Password\" formControlName=\"password\">\n      </p>\n  \n      <div *ngIf=\"isSubmitted && formControls.password.errors\" class=\"help-block\">\n        <div *ngIf=\"formControls.password.errors.required\">Password is required</div>\n      </div>\n  \n      <p>\n        <input type=\"submit\"  value=\"Log in\">        \n      </p>\n    </form>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/retailer-edit/retailer-edit.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/retailer-edit/retailer-edit.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <span class=\"Header\">Retailer</span>\n    <p></p>\n    <span>------------------------------------------</span>\n    <p></p>\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span>\n        <p></p>\n\n\n        <label>Fisrt Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.fname\">\n        <p></p>\n\n\n        <label>Last Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.lname\">\n        <p></p>\n\n\n        <label>Email</label>\n        <p></p>\n        <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.email\">\n        <p></p>        \n\n\n        <label>MobNo-Primary</label>\n        <p></p>\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessContactInformation.mobNoPrimary\">\n        <p></p>\n\n\n        <label>MobNo-Alternative</label>\n        <p></p>\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessContactInformation.mobNoAlternate\">\n\n\n    </div>\n\n\n\n\n    <div style=\"float: left; padding-top:20px;width: 50%; \">\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>\n        <p></p>\n\n        <label>OutLate Name</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.outLateName\">\n        <p></p>\n\n\n        <label>Country</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.country\">\n        <p></p>\n\n\n        <label>State</label>\n        <p></p>\n        <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.State\">-->\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.businessAddress.state\" (change)=\"onStateChange($event)\">\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\n            <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\n                {{states[i].Name}}\n            </option>\n        </select>\n        <p></p>\n        \n\n        <label>District</label>\n        <p></p>\n        <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.District\"> -->\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.businessAddress.district\">\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\n            <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\n                {{dists[i].Name}}\n            </option>\n        </select>\n        <p></p>\n\n\n        <label>Region</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.region\">\n        <p></p>\n\n\n        <label>Pin</label>\n        <p></p>\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.businessAddress.pin\">\n\n    </div>\n    <br>\n    <div style=\"float:inherit;padding-top: 20px;\">\n        <a [routerLink]=\"['/retailerList']\" routerLinkActive=\"router-link-active\">Back</a>\n        ||\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\n                   style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\n    </div>\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/retailer-list/retailer-list.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/retailer-list/retailer-list.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Retailer</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/retailerAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterByMatchText : searchText\">\n                                <td>{{obj.fname}}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/retailerEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delRetailer']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -96,7 +140,18 @@ module.exports = "<p>login-component works!</p>\r\n<div>\r\nUserName : \r\n</div
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Retailer</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p>\r\n    <span class=\"SubHeader\">Select Distributor</span>   \r\n    <p></p>\r\n    <select id=\"userType\" name=\"userType\" style=\"width: 300px\">\r\n        <option value=\"0\">Select</option>\r\n        <option value=\"1\">Dis1</option>\r\n        <option value=\"2\">Dis2</option>\r\n        <option value=\"3\">Dis3</option>\r\n        <option value=\"4\">Dis4</option>        \r\n    </select> \r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span> \r\n         <p></p>\r\n    <label>Fisrt Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Last Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Primary</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Alternative</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>MobNo-Primary</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>MobNo-Alternative</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    </div>\r\n    <div  style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>        \r\n        <p></p>    \r\n       \r\n    <label>OutLate Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Country</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>State</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>District</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>Region</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">   \r\n    <p></p>\r\n    <label>Pin</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    </div> \r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n       \r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Retailer...</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span>\r\n        <p></p>\r\n\r\n\r\n        <label>Fisrt Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.Fname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Last Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.Lname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Email</label>\r\n        <p></p>\r\n        <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.email\">\r\n        <p></p>\r\n\r\n\r\n        <label>Password</label>\r\n        <p></p>\r\n        <input type=\"password\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.password\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Primary</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessContactInformation.MobNoPrimary\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Alternative</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessContactInformation.MobNoAlternate\">\r\n\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n    <div style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>\r\n        <p></p>\r\n\r\n        <label>OutLate Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.OutLateName\">\r\n        <p></p>\r\n\r\n\r\n        <label>Country</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Country\">\r\n        <p></p>\r\n\r\n\r\n        <label>State</label>\r\n        <p></p>\r\n        <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.State\">-->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.BusinessAddress.State\" (change)=\"onStateChange($event)\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\r\n                {{states[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n        \r\n\r\n        <label>District</label>\r\n        <p></p>\r\n        <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.District\"> -->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"obj.BusinessAddress.District\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\r\n                {{dists[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n\r\n\r\n        <label>Region</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Region\">\r\n        <p></p>\r\n\r\n\r\n        <label>Pin</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"obj.BusinessAddress.Pin\">\r\n\r\n    </div>\r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <a [routerLink]=\"['/retailerList']\" routerLinkActive=\"router-link-active\">Back</a>\r\n        ||\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\r\n                   style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/super-stockist-edit/super-stockist-edit.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/super-stockist-edit/super-stockist-edit.component.html ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">Super Stockist</span>\r\n        <p></p>\r\n        <span>------------------------------------------</span>\r\n        <p></p>\r\n        <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n            <span class=\"SubHeader\">PERSONAL INFORMATION</span>\r\n            <p></p>\r\n    \r\n    \r\n            <label>Fisrt Name</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.fname\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>Last Name</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.lname\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>Email</label>\r\n            <p></p>\r\n            <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.email\">\r\n            <p></p>        \r\n    \r\n    \r\n            <label>MobNo-Primary</label>\r\n            <p></p>\r\n            <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessContactInformation.mobNoPrimary\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>MobNo-Alternative</label>\r\n            <p></p>\r\n            <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessContactInformation.mobNoAlternate\">\r\n    \r\n    \r\n        </div>\r\n    \r\n    \r\n    \r\n    \r\n        <div style=\"float: left; padding-top:20px;width: 50%; \">\r\n            <span class=\"SubHeader\">OUTLATE INFORMATION</span>\r\n            <p></p>\r\n    \r\n            <label>OutLate Name</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessAddress.outLateName\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>Country</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessAddress.country\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>State</label>\r\n            <p></p>\r\n            <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.State\">-->\r\n            <select style=\"width: 320px;\" [(ngModel)]=\"superStockist.businessAddress.state\" (change)=\"onStateChange($event)\">\r\n                <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n                <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\r\n                    {{states[i].Name}}\r\n                </option>\r\n            </select>\r\n            <p></p>\r\n            \r\n    \r\n            <label>District</label>\r\n            <p></p>\r\n            <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.District\"> -->\r\n            <select style=\"width: 320px;\" [(ngModel)]=\"superStockist.businessAddress.district\">\r\n                <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n                <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\r\n                    {{dists[i].Name}}\r\n                </option>\r\n            </select>\r\n            <p></p>\r\n    \r\n    \r\n            <label>Region</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessAddress.region\">\r\n            <p></p>\r\n    \r\n    \r\n            <label>Pin</label>\r\n            <p></p>\r\n            <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.businessAddress.pin\">\r\n    \r\n        </div>\r\n        <br>\r\n        <div style=\"float:inherit;padding-top: 20px;\">\r\n            <a [routerLink]=\"['/SuperStockistList']\" routerLinkActive=\"router-link-active\">Back</a>\r\n            ||\r\n            <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\r\n                       style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n        </div>\r\n    \r\n    </div>"
 
 /***/ }),
 
@@ -107,7 +162,7 @@ module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Retail
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"divContainer\">\n    <div>\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829)\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 800px; text-align: right;\">\n                <a [routerLink]=\"['/empAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Dept. Name</th>                                   \n                                <th style=\"width: 100px;\">DOJ</th>\n                                <th style=\"width: 50px;\">Gender</th>\n                                <th style=\"width: 100px;\">Mob Primary</th>\n                                <th style=\"width: 150px;\">Email</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of superStockists | filterByMatchText : searchText\">\n                                <td>{{obj.Fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.email}}</td>\n                                <td>{{obj.MobNoPrimary}</td>                                    \n                                <td>{{obj.BusinessAddress.OUTLateName}}</td>\n                                <td>{{obj.BusinessAddress.Region}}</td>\n                                <td>{{obj.BusinessAddress.DISTRICT}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/editEmp']\" routerLinkActive=\"router-link-active\">Edit</a>\n                                        <img src=\"\" [routerLink]=\"['/editEmp']\" routerLinkActive=\"router-link-active\">    \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delEmp']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Super Stockist</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/superStockistAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of superStockists | filterByMatchText : searchText\">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/superStockistEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delEmp']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -118,7 +173,7 @@ module.exports = "<div id=\"divContainer\">\n    <div>\n          <span style=\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Super Stockist</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span> \r\n         <p></p>\r\n    <label>Fisrt Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Last Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Primary</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Email-Alternative</label>\r\n    <p></p>\r\n    <input type=\"email\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>MobNo-Primary</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>MobNo-Alternative</label>\r\n    <p></p>\r\n    <input type=\"tel\" class=\"SubHeaderInput\"> \r\n    </div>\r\n    <div  style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>        \r\n        <p></p>    \r\n       \r\n    <label>OutLate Name</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>Country</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>State</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\"> \r\n    <p></p>\r\n    <label>District</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    <p></p>\r\n    <label>Region</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">   \r\n    <p></p>\r\n    <label>Pin</label>\r\n    <p></p>\r\n    <input type=\"text\" class=\"SubHeaderInput\">\r\n    </div> \r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n       \r\n</div>\r\n\r\n\r\n\r\n\r\n"
+module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Super Stockist</span>\r\n    <p></p>\r\n    <span>------------------------------------------</span>\r\n    <p></p>\r\n    <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n        <span class=\"SubHeader\">PERSONAL INFORMATION</span>\r\n        <p></p>\r\n\r\n\r\n        <label>Fisrt Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.Fname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Last Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.Lname\">\r\n        <p></p>\r\n\r\n\r\n        <label>Email</label>\r\n        <p></p>\r\n        <input type=\"email\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.email\">\r\n        <p></p>\r\n\r\n\r\n        <label>Password</label>\r\n        <p></p>\r\n        <input type=\"password\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.password\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Primary</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessContactInformation.MobNoPrimary\">\r\n        <p></p>\r\n\r\n\r\n        <label>MobNo-Alternative</label>\r\n        <p></p>\r\n        <input type=\"tel\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessContactInformation.MobNoAlternate\">\r\n\r\n\r\n    </div>\r\n\r\n\r\n\r\n\r\n    <div style=\"float: left; padding-top:20px;width: 50%; \">\r\n        <span class=\"SubHeader\">OUTLATE INFORMATION</span>\r\n        <p></p>\r\n\r\n        <label>OutLate Name</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.OutLateName\">\r\n        <p></p>\r\n\r\n\r\n        <label>Country</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.Country\">\r\n        <p></p>\r\n\r\n\r\n        <label>State</label>\r\n        <p></p>\r\n        <!--<input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.State\">-->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"superStockist.BusinessAddress.State\" (change)=\"onStateChange($event)\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let state of states;let i = index\" [value]=\"states[i].Name\">\r\n                {{states[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n        \r\n\r\n        <label>District</label>\r\n        <p></p>\r\n        <!-- <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.District\"> -->\r\n        <select style=\"width: 320px;\" [(ngModel)]=\"superStockist.BusinessAddress.District\">\r\n            <!-- <option value=\"0\" selected=\"selected\">Select State -->\r\n            <option *ngFor=\"let dist of dists;let i = index\" [value]=\"dists[i].Name\">\r\n                {{dists[i].Name}}\r\n            </option>\r\n        </select>\r\n        <p></p>\r\n\r\n\r\n        <label>Region</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.Region\">\r\n        <p></p>\r\n\r\n\r\n        <label>Pin</label>\r\n        <p></p>\r\n        <input type=\"text\" class=\"SubHeaderInput\" [(ngModel)]=\"superStockist.BusinessAddress.Pin\">\r\n\r\n    </div>\r\n    <br>\r\n    <div style=\"float:inherit;padding-top: 20px;\">\r\n        <a [routerLink]=\"['/SuperStockistList']\" routerLinkActive=\"router-link-active\">Back</a>\r\n        ||\r\n        <input type=\"button\" width=\"400x;\" value=\"Save Record\" (click)=\"SaveRecord()\"\r\n                   style=\"background-color:rgba(16, 108, 230, 0.692); color: white;\">\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -140,7 +195,7 @@ module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">St
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0LWNvbXBvbWVudC9hYm91dC1jb21wb21lbnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ""
 
 /***/ }),
 
@@ -192,10 +247,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home-compoment/home-compoment.component */ "./src/app/home-compoment/home-compoment.component.ts");
 /* harmony import */ var _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./about-compoment/about-compoment.component */ "./src/app/about-compoment/about-compoment.component.ts");
 /* harmony import */ var _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tran-assign-stock/tran-assign-stock.component */ "./src/app/tran-assign-stock/tran-assign-stock.component.ts");
-/* harmony import */ var _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./distributor/distributor.component */ "./src/app/distributor/distributor.component.ts");
-/* harmony import */ var _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./retailer/retailer.component */ "./src/app/retailer/retailer.component.ts");
-/* harmony import */ var _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./business-associate/business-associate.component */ "./src/app/business-associate/business-associate.component.ts");
-/* harmony import */ var _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./super-stockist-list/super-stockist-list.component */ "./src/app/super-stockist-list/super-stockist-list.component.ts");
+/* harmony import */ var _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./super-stockist-list/super-stockist-list.component */ "./src/app/super-stockist-list/super-stockist-list.component.ts");
+/* harmony import */ var _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./super-stockist/super-stockist.component */ "./src/app/super-stockist/super-stockist.component.ts");
+/* harmony import */ var _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./super-stockist-edit/super-stockist-edit.component */ "./src/app/super-stockist-edit/super-stockist-edit.component.ts");
+/* harmony import */ var _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./distributor-list/distributor-list.component */ "./src/app/distributor-list/distributor-list.component.ts");
+/* harmony import */ var _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./distributor/distributor.component */ "./src/app/distributor/distributor.component.ts");
+/* harmony import */ var _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./distributor-edit/distributor-edit.component */ "./src/app/distributor-edit/distributor-edit.component.ts");
+/* harmony import */ var _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./retailer-list/retailer-list.component */ "./src/app/retailer-list/retailer-list.component.ts");
+/* harmony import */ var _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./retailer/retailer.component */ "./src/app/retailer/retailer.component.ts");
+/* harmony import */ var _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./retailer-edit/retailer-edit.component */ "./src/app/retailer-edit/retailer-edit.component.ts");
+/* harmony import */ var _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./business-associate/business-associate.component */ "./src/app/business-associate/business-associate.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
+
+
+
+
+
+
+
+
 
 
 
@@ -207,13 +278,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
+    { path: '', pathMatch: 'full', redirectTo: 'login' },
+    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"] },
     { path: 'home', component: _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_3__["HomeCompomentComponent"] },
     { path: 'about', component: _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_4__["AboutCompomentComponent"] },
     { path: 'Transaction', component: _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__["TranAssignStockComponent"] },
-    { path: 'SuperStockist', component: _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_9__["SuperStockistListComponent"] },
-    { path: 'Drisbutor', component: _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_6__["DistributorComponent"] },
-    { path: 'Retailer', component: _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_7__["RetailerComponent"] },
-    { path: 'BusinessAssociate', component: _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_8__["BusinessAssociateComponent"] }
+    { path: 'SuperStockistList', component: _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_6__["SuperStockistListComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_17__["AuthGuard"]] },
+    { path: 'superStockistAdd', component: _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_7__["SuperStockistComponent"] },
+    { path: 'superStockistEdit/:id', component: _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_8__["SuperStockistEditComponent"] },
+    { path: 'distributorList', component: _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_9__["DistributorListComponent"] },
+    { path: 'distributorAdd', component: _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_10__["DistributorComponent"] },
+    { path: 'distributorEdit/:id', component: _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_11__["DistributorEditComponent"] },
+    { path: 'retailerList', component: _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_12__["RetailerListComponent"] },
+    { path: 'retailerAdd', component: _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"] },
+    { path: 'retailerEdit/:id', component: _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_14__["RetailerEditComponent"] },
+    { path: 'BusinessAssociate', component: _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_15__["BusinessAssociateComponent"] },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -235,7 +314,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -251,19 +330,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _app_service_app_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/service/app-storage.service */ "./src/app/service/app-storage.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _model_LogInUser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./model/LogInUser */ "./src/app/model/LogInUser.ts");
+
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
-        this.title = 'ZetTrack India';
+    /**
+     *
+     */
+    constructor(appStorageService, AuthService) {
+        this.appStorageService = appStorageService;
+        this.AuthService = AuthService;
+        this.title = 'ZETTRACK INDIA';
+        this.data = [];
+        this.appStorageService.setUserNameInLocal('Admin');
+        this.appStorageService.setParentCompanyIdInLocal('05008166-6159-493D-15EE-08D712D81DBC');
+    }
+    ngOnInit() {
+        console.log('init called....');
+        this.LogInUser = new _model_LogInUser__WEBPACK_IMPORTED_MODULE_4__["LogInUser"]();
+        this.LogInUser.companyName = this.AuthService.getCompanyName();
+        this.LogInUser.email = this.AuthService.getEmail();
+        this.LogInUser.fname = this.AuthService.getFname();
+        this.LogInUser.lname = this.AuthService.getLname();
+        this.LogInUser.parentCompanyId = this.AuthService.getParentCompanyId();
+        this.LogInUser.parentCompanyName = this.AuthService.getParentCompanyName();
+        this.LogInUser.roleId = this.AuthService.getRoleId();
+        this.LogInUser.roleName = this.AuthService.getRoleName();
+    }
+    logOut() {
+        this.AuthService.logout();
     }
 };
+AppComponent.ctorParameters = () => [
+    { type: _app_service_app_storage_service__WEBPACK_IMPORTED_MODULE_2__["AppStorageService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
         template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
         styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-    })
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_service_app_storage_service__WEBPACK_IMPORTED_MODULE_2__["AppStorageService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
 ], AppComponent);
 
 
@@ -286,8 +399,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./login-component/login-component.component */ "./src/app/login-component/login-component.component.ts");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home-compoment/home-compoment.component */ "./src/app/home-compoment/home-compoment.component.ts");
 /* harmony import */ var _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about-compoment/about-compoment.component */ "./src/app/about-compoment/about-compoment.component.ts");
 /* harmony import */ var _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tran-assign-stock/tran-assign-stock.component */ "./src/app/tran-assign-stock/tran-assign-stock.component.ts");
@@ -297,6 +410,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./business-associate/business-associate.component */ "./src/app/business-associate/business-associate.component.ts");
 /* harmony import */ var _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./filter/filter-by-match-text.pipe */ "./src/app/filter/filter-by-match-text.pipe.ts");
 /* harmony import */ var _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./super-stockist-list/super-stockist-list.component */ "./src/app/super-stockist-list/super-stockist-list.component.ts");
+/* harmony import */ var _model_app_storage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./model/app-storage */ "./src/app/model/app-storage.ts");
+/* harmony import */ var _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./super-stockist-edit/super-stockist-edit.component */ "./src/app/super-stockist-edit/super-stockist-edit.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./distributor-edit/distributor-edit.component */ "./src/app/distributor-edit/distributor-edit.component.ts");
+/* harmony import */ var _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./retailer-edit/retailer-edit.component */ "./src/app/retailer-edit/retailer-edit.component.ts");
+/* harmony import */ var _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./retailer-list/retailer-list.component */ "./src/app/retailer-list/retailer-list.component.ts");
+/* harmony import */ var _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./distributor-list/distributor-list.component */ "./src/app/distributor-list/distributor-list.component.ts");
+
+
+
+
+
+
+
 
 
 
@@ -319,8 +446,7 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-            _login_component_login_component_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponentComponent"],
+            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
             _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_8__["HomeCompomentComponent"],
             _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_9__["AboutCompomentComponent"],
             _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__["TranAssignStockComponent"],
@@ -330,18 +456,67 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"],
             _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"],
             _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"],
+            _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"],
+            _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
+            _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"],
+            _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"],
+            _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"],
+            _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__["StorageServiceModule"],
         ],
-        providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
-        exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"]]
+        providers: [_model_app_storage__WEBPACK_IMPORTED_MODULE_17__["AppStorage"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
+        exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"], _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"], _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"], _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"], _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"], _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/auth.guard.ts":
+/*!*******************************!*\
+  !*** ./src/app/auth.guard.ts ***!
+  \*******************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./service/auth.service */ "./src/app/service/auth.service.ts");
+
+
+
+let AuthGuard = class AuthGuard {
+    /**
+     *
+     */
+    constructor(authService) {
+        this.authService = authService;
+    }
+    canActivate(next, state) {
+        return this.authService.isLoggedIn();
+    }
+};
+AuthGuard.ctorParameters = () => [
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
+AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+], AuthGuard);
 
 
 
@@ -354,7 +529,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2J1c2luZXNzLWFzc29jaWF0ZS9idXNpbmVzcy1hc3NvY2lhdGUuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ""
 
 /***/ }),
 
@@ -390,6 +565,227 @@ BusinessAssociateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/distributor-edit/distributor-edit.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/distributor-edit/distributor-edit.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/distributor-edit/distributor-edit.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/distributor-edit/distributor-edit.component.ts ***!
+  \****************************************************************/
+/*! exports provided: DistributorEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistributorEditComponent", function() { return DistributorEditComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/distributor.service */ "./src/app/service/distributor.service.ts");
+/* harmony import */ var _model_Distributor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/Distributor */ "./src/app/model/Distributor.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
+
+
+let DistributorEditComponent = class DistributorEditComponent {
+    constructor(distributorService, AuthService, stateService, router, route) {
+        this.distributorService = distributorService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.ChkForAuth();
+        this.obj = new _model_Distributor__WEBPACK_IMPORTED_MODULE_3__["Distributor"]();
+        this.obj.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.obj.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.obj.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        }).add(() => {
+            route.paramMap.subscribe(p => {
+                this.id = p.get('id');
+                this.getData();
+            });
+        });
+    }
+    ngOnInit() {
+    }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "2") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    getData() {
+        this.distributorService.getData(this.id).subscribe((data) => {
+            this.obj = data;
+            console.log('Data from server');
+            console.log(this.obj);
+            console.log(data);
+            this.getDistrict();
+        });
+    }
+    onStateChange(args) {
+        this.obj.businessAddress.state = args.target.value;
+        this.getDistrict();
+        this.obj.businessAddress.district = this.dists[0].Name;
+    }
+    getDistrict() {
+        var stateName = this.obj.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+        console.log('District info');
+        console.log(stateName);
+        console.log(this.dists);
+        console.log('District info');
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.obj.superStockistId = this.AuthService.getId();
+            this.distributorService.putData(this.obj).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../distributorList']);
+            });
+        }
+    }
+    validateRecord() {
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.fname)) || this.obj.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.lname)) || this.obj.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.email)) || this.obj.email == '') {
+            alert('Email is required.');
+            return false;
+        }
+    }
+};
+DistributorEditComponent.ctorParameters = () => [
+    { type: _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
+];
+DistributorEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-distributor-edit',
+        template: __webpack_require__(/*! raw-loader!./distributor-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/distributor-edit/distributor-edit.component.html"),
+        styles: [__webpack_require__(/*! ./distributor-edit.component.css */ "./src/app/distributor-edit/distributor-edit.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
+], DistributorEditComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/distributor-list/distributor-list.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/distributor-list/distributor-list.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/distributor-list/distributor-list.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/distributor-list/distributor-list.component.ts ***!
+  \****************************************************************/
+/*! exports provided: DistributorListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistributorListComponent", function() { return DistributorListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/distributor.service */ "./src/app/service/distributor.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+let DistributorListComponent = class DistributorListComponent {
+    constructor(DistributorService, AuthService, router) {
+        this.DistributorService = DistributorService;
+        this.AuthService = AuthService;
+        this.router = router;
+        this.searchText = '';
+        this.ChkForAuth();
+    }
+    ngOnInit() {
+    }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "2") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    loadData() {
+        this.searchText = '';
+        var superStockistId = this.AuthService.getId();
+        this.DistributorService.getDataAll(superStockistId)
+            .subscribe(data => {
+            this.objCollection = data;
+            (err) => { console.log(err); };
+        });
+    }
+};
+DistributorListComponent.ctorParameters = () => [
+    { type: _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+DistributorListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-distributor-list',
+        template: __webpack_require__(/*! raw-loader!./distributor-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/distributor-list/distributor-list.component.html"),
+        styles: [__webpack_require__(/*! ./distributor-list.component.css */ "./src/app/distributor-list/distributor-list.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+], DistributorListComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/distributor/distributor.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/distributor/distributor.component.css ***!
@@ -397,7 +793,7 @@ BusinessAssociateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yL2Rpc3RyaWJ1dG9yLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -413,20 +809,106 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistributorComponent", function() { return DistributorComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/distributor.service */ "./src/app/service/distributor.service.ts");
+/* harmony import */ var _model_Distributor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/Distributor */ "./src/app/model/Distributor.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
 
 
 let DistributorComponent = class DistributorComponent {
-    constructor() { }
+    constructor(distributorService, AuthService, stateService, router, route) {
+        this.distributorService = distributorService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.ChkForAuth();
+        this.obj = new _model_Distributor__WEBPACK_IMPORTED_MODULE_3__["Distributor"]();
+        this.obj.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.obj.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.obj.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+            this.obj.businessAddress.state = this.states[0].Name;
+            this.getDistrict();
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        });
+    }
     ngOnInit() {
     }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "2") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    onStateChange(args) {
+        this.obj.businessAddress.state = args.target.value;
+        this.getDistrict();
+    }
+    getDistrict() {
+        var stateName = this.obj.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+        this.obj.businessAddress.district = this.dists[0].Name;
+    }
+    validateRecord() {
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.fname)) || this.obj.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.lname)) || this.obj.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.email)) || this.obj.email == '') {
+            alert('Email is required.');
+            return false;
+        }
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.obj.superStockistId = this.AuthService.getId();
+            this.distributorService.postData(this.obj).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../distributorList']);
+            });
+        }
+    }
 };
+DistributorComponent.ctorParameters = () => [
+    { type: _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
+];
 DistributorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-distributor',
         template: __webpack_require__(/*! raw-loader!./distributor.component.html */ "./node_modules/raw-loader/index.js!./src/app/distributor/distributor.component.html"),
         styles: [__webpack_require__(/*! ./distributor.component.css */ "./src/app/distributor/distributor.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_distributor_service__WEBPACK_IMPORTED_MODULE_2__["DistributorService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
 ], DistributorComponent);
 
 
@@ -478,7 +960,7 @@ FilterByMatchTextPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtY29tcG9tZW50L2hvbWUtY29tcG9tZW50LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -494,77 +976,751 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeCompomentComponent", function() { return HomeCompomentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.component */ "./src/app/app.component.ts");
+
 
 
 let HomeCompomentComponent = class HomeCompomentComponent {
-    constructor() { }
+    constructor(app) {
+        this.app = app;
+        app.ngOnInit();
+    }
     ngOnInit() {
     }
 };
+HomeCompomentComponent.ctorParameters = () => [
+    { type: _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"] }
+];
 HomeCompomentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home-compoment',
         template: __webpack_require__(/*! raw-loader!./home-compoment.component.html */ "./node_modules/raw-loader/index.js!./src/app/home-compoment/home-compoment.component.html"),
         styles: [__webpack_require__(/*! ./home-compoment.component.css */ "./src/app/home-compoment/home-compoment.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]])
 ], HomeCompomentComponent);
 
 
 
 /***/ }),
 
-/***/ "./src/app/login-component/login-component.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/login-component/login-component.component.css ***!
-  \***************************************************************/
+/***/ "./src/app/login/login.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/login/login.component.css ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luLWNvbXBvbmVudC9sb2dpbi1jb21wb25lbnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ".login {\r\n    width: 400px;\r\n    margin: 16px auto;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  .login-header,\r\n  .login p {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .login-triangle {\r\n    width: 0;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    border: 12px solid transparent;\r\n    border-bottom-color: rgb(15, 66, 107);\r\n  }\r\n  \r\n  .login-header {\r\n    background: rgb(12, 77, 129);\r\n    padding: 20px;\r\n    font-size: 1.4em;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    color: #fff;\r\n  }\r\n  \r\n  .login-container {\r\n    background: #ebebeb;\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login p {\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login input {\r\n    box-sizing: border-box;\r\n    display: block;\r\n    width: 100%;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    padding: 16px;\r\n    outline: 0;\r\n    font-family: inherit;\r\n    font-size: 0.95em;\r\n  }\r\n  \r\n  .login input[type=\"email\"],\r\n  .login input[type=\"password\"] {\r\n    background: #fff;\r\n    border-color: #bbb;\r\n    color: #555;\r\n  }\r\n  \r\n  .login input[type=\"email\"]:focus,\r\n  .login input[type=\"password\"]:focus {\r\n    border-color: #888;\r\n  }\r\n  \r\n  .login input[type=\"submit\"] {\r\n    background: rgb(1, 29, 51);\r\n    border-color: transparent;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:hover {\r\n    background: #17c;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:focus {\r\n    border-color: #05a;\r\n  }\r\n  \r\n  .has-error input[type=\"email\"],\r\n.has-error input[type=\"password\"] {\r\n    border-color: rgb(216, 12, 12);\r\n    color: rgb(230, 14, 14);\r\n}"
 
 /***/ }),
 
-/***/ "./src/app/login-component/login-component.component.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/login-component/login-component.component.ts ***!
-  \**************************************************************/
-/*! exports provided: LoginComponentComponent */
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponentComponent", function() { return LoginComponentComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_5__);
 
 
-let LoginComponentComponent = class LoginComponentComponent {
-    constructor() {
-        this.userName = '';
-        this.passWord = '';
+
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(authService, router, formBuilder) {
+        this.authService = authService;
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.isSubmitted = false;
+    }
+    ngOnInit() {
+        this.loginForm = this.formBuilder.group({
+            email: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            password: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+    }
+    get formControls() { return this.loginForm.controls; }
+    login() {
+        console.log(this.loginForm.value);
+        this.isSubmitted = true;
+        if (this.loginForm.invalid) {
+            return;
+        }
+        this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+            next: (data) => {
+                if (!Object(util__WEBPACK_IMPORTED_MODULE_5__["isUndefined"])(data)) {
+                    if ((data.roleId > 0)) {
+                        this.authService.setAccessToken(data);
+                        this.router.navigateByUrl('/home');
+                    }
+                    else {
+                        alert('LonIn Failed...!!!');
+                    }
+                }
+                else {
+                    alert('LonIn Failed...!!!');
+                }
+            },
+            error: (data) => {
+                console.log('this is the error message' + data);
+            },
+            complete: () => {
+                console.log('The login call completed...');
+            }
+        });
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] }
+];
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: __webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html"),
+        styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
+], LoginComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/BusinessAddress.ts":
+/*!******************************************!*\
+  !*** ./src/app/model/BusinessAddress.ts ***!
+  \******************************************/
+/*! exports provided: BusinessAddress */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessAddress", function() { return BusinessAddress; });
+class BusinessAddress {
+    get ID() {
+        return this.Id;
+    }
+    set ID(value) {
+        this.Id = value;
+    }
+    get country() {
+        return this.Country;
+    }
+    set country(value) {
+        this.Country = value;
+    }
+    get state() {
+        return this.State;
+    }
+    set state(value) {
+        this.State = value;
+    }
+    get district() {
+        return this.District;
+    }
+    set district(value) {
+        this.District = value;
+    }
+    get region() {
+        return this.Region;
+    }
+    set region(value) {
+        this.Region = value;
+    }
+    get pin() {
+        return this.Pin;
+    }
+    set pin(value) {
+        this.Pin = value;
+    }
+    get outLateName() {
+        return this.OutLateName;
+    }
+    set outLateName(value) {
+        this.OutLateName = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/BusinessContactInformation.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/model/BusinessContactInformation.ts ***!
+  \*****************************************************/
+/*! exports provided: BusinessContactInformation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessContactInformation", function() { return BusinessContactInformation; });
+class BusinessContactInformation {
+    get ID() {
+        return this.Id;
+    }
+    set ID(value) {
+        this.Id = value;
+    }
+    get email() {
+        return this._email;
+    }
+    set email(value) {
+        this._email = value;
+    }
+    get mobNoPrimary() {
+        return this.MobNoPrimary;
+    }
+    set mobNoPrimary(value) {
+        this.MobNoPrimary = value;
+    }
+    get mobNoAlternate() {
+        return this.MobNoAlternate;
+    }
+    set mobNoAlternate(value) {
+        this.MobNoAlternate = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/Distributor.ts":
+/*!**************************************!*\
+  !*** ./src/app/model/Distributor.ts ***!
+  \**************************************/
+/*! exports provided: Distributor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Distributor", function() { return Distributor; });
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ "./src/app/model/user.ts");
+
+class Distributor extends _user__WEBPACK_IMPORTED_MODULE_0__["user"] {
+    get ID() {
+        return this.Id;
+    }
+    set ID(v) {
+        this.Id = v;
+    }
+    get businessAddress() {
+        return this.BusinessAddress;
+    }
+    set businessAddress(value) {
+        this.BusinessAddress = value;
+    }
+    get businessAssociate() {
+        return this.BusinessAssociate;
+    }
+    set businessAssociate(value) {
+        this.BusinessAssociate = value;
+    }
+    get retailer() {
+        return this.Retailer;
+    }
+    set retailer(value) {
+        this.Retailer = value;
+    }
+    get superStockistId() {
+        return this.SuperStockistId;
+    }
+    set superStockistId(value) {
+        this.SuperStockistId = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/LogInUser.ts":
+/*!************************************!*\
+  !*** ./src/app/model/LogInUser.ts ***!
+  \************************************/
+/*! exports provided: LogInUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LogInUser", function() { return LogInUser; });
+class LogInUser {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/PersonalContactInformation.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/model/PersonalContactInformation.ts ***!
+  \*****************************************************/
+/*! exports provided: PersonalContactInformation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalContactInformation", function() { return PersonalContactInformation; });
+class PersonalContactInformation {
+    get ID() {
+        return this.Id;
+    }
+    set ID(value) {
+        this.Id = value;
+    }
+    get email() {
+        return this._email;
+    }
+    set email(value) {
+        this._email = value;
+    }
+    get mobNoPrimary() {
+        return this.MobNoPrimary;
+    }
+    set mobNoPrimary(value) {
+        this.MobNoPrimary = value;
+    }
+    get mobNoAlternate() {
+        return this.MobNoAlternate;
+    }
+    set mobNoAlternate(value) {
+        this.MobNoAlternate = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/Retailer.ts":
+/*!***********************************!*\
+  !*** ./src/app/model/Retailer.ts ***!
+  \***********************************/
+/*! exports provided: Retailer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Retailer", function() { return Retailer; });
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ "./src/app/model/user.ts");
+
+class Retailer extends _user__WEBPACK_IMPORTED_MODULE_0__["user"] {
+    get ID() {
+        return this.Id;
+    }
+    set ID(v) {
+        this.Id = v;
+    }
+    get businessAddress() {
+        return this.BusinessAddress;
+    }
+    set businessAddress(value) {
+        this.BusinessAddress = value;
+    }
+    get businessAssociate() {
+        return this.BusinessAssociate;
+    }
+    set businessAssociate(value) {
+        this.BusinessAssociate = value;
+    }
+    get distributorId() {
+        return this.DistributorId;
+    }
+    set distributorId(value) {
+        this.DistributorId = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/SuperStockist.ts":
+/*!****************************************!*\
+  !*** ./src/app/model/SuperStockist.ts ***!
+  \****************************************/
+/*! exports provided: SuperStockist */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuperStockist", function() { return SuperStockist; });
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ "./src/app/model/user.ts");
+
+class SuperStockist extends _user__WEBPACK_IMPORTED_MODULE_0__["user"] {
+    get ID() {
+        return this.Id;
+    }
+    set ID(v) {
+        this.Id = v;
+    }
+    get businessAddress() {
+        return this.BusinessAddress;
+    }
+    set businessAddress(value) {
+        this.BusinessAddress = value;
+    }
+    get parentCompanyId() {
+        return this.ParentCompanyId;
+    }
+    set parentCompanyId(v) {
+        this.ParentCompanyId = v;
+    }
+    get distributors() {
+        return this._distributors;
+    }
+    set distributors(v) {
+        this._distributors = v;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/model/app-storage.ts":
+/*!**************************************!*\
+  !*** ./src/app/model/app-storage.ts ***!
+  \**************************************/
+/*! exports provided: AppStorage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppStorage", function() { return AppStorage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.js");
+
+
+
+let AppStorage = class AppStorage {
+    /**
+     *
+     */
+    //public data:any=[]
+    constructor(storage) {
+        this.storage = storage;
+    }
+    get ParentCompanyId() {
+        //return this._ParentCompanyId;
+        return this.getFromLocal('_ParentCompanyId');
+    }
+    set ParentCompanyId(v) {
+        this._ParentCompanyId = v;
+        this.saveInLocal('_ParentCompanyId', v);
+    }
+    get UserName() {
+        //return this._UserName;
+        return this.getFromLocal('_UserName');
+    }
+    set UserName(v) {
+        this._UserName = v;
+        this.saveInLocal('_UserName', v);
+    }
+    saveInLocal(key, val) {
+        console.log('recieved= key:' + key + 'value:' + val);
+        this.storage.set(key, val);
+        //this.data[key]= this.storage.get(key);
+    }
+    getFromLocal(key) {
+        console.log('recieved= key:' + key);
+        return this.storage.get(key);
+        //this.data[key]= this.storage.get(key);
+        //console.log(this.data);
+    }
+};
+AppStorage.ctorParameters = () => [
+    { type: angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["WebStorageService"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["LOCAL_STORAGE"],] }] }
+];
+AppStorage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["LOCAL_STORAGE"])),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["WebStorageService"]])
+], AppStorage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/user.ts":
+/*!*******************************!*\
+  !*** ./src/app/model/user.ts ***!
+  \*******************************/
+/*! exports provided: user */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "user", function() { return user; });
+class user {
+    get fname() {
+        return this.Fname;
+    }
+    set fname(v) {
+        this.Fname = v;
+    }
+    get lname() {
+        return this.Lname;
+    }
+    set lname(v) {
+        this.Lname = v;
+    }
+    get email() {
+        return this.Email;
+    }
+    set email(v) {
+        this.Email = v;
+    }
+    get password() {
+        return this.Password;
+    }
+    set password(v) {
+        this.Password = v;
+    }
+    get roleId() {
+        return this.RoleId;
+    }
+    set roleId(v) {
+        this.RoleId = v;
+    }
+    get businessContactInformation() {
+        return this.BusinessContactInformation;
+    }
+    set businessContactInformation(v) {
+        this.BusinessContactInformation = v;
+    }
+    get personalContactInformation() {
+        return this.PersonalContactInformation;
+    }
+    set personalContactInformation(v) {
+        this.PersonalContactInformation = v;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/retailer-edit/retailer-edit.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/retailer-edit/retailer-edit.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/retailer-edit/retailer-edit.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/retailer-edit/retailer-edit.component.ts ***!
+  \**********************************************************/
+/*! exports provided: RetailerEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RetailerEditComponent", function() { return RetailerEditComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/retailer.service */ "./src/app/service/retailer.service.ts");
+/* harmony import */ var _model_Retailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/Retailer */ "./src/app/model/Retailer.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
+
+
+let RetailerEditComponent = class RetailerEditComponent {
+    constructor(retailerService, AuthService, stateService, router, route) {
+        this.retailerService = retailerService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.ChkForAuth();
+        this.obj = new _model_Retailer__WEBPACK_IMPORTED_MODULE_3__["Retailer"]();
+        this.obj.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.obj.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.obj.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        }).add(() => {
+            route.paramMap.subscribe(p => {
+                this.id = p.get('id');
+                this.getData();
+            });
+        });
     }
     ngOnInit() {
     }
-    /**
-     * name
-     */
-    Login() {
-        var result = false;
-        if ((this.userName == 'admin') && (this.passWord == 'admin')) {
-            result = true;
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "3") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
         }
-        return result;
+    }
+    getData() {
+        this.retailerService.getData(this.id).subscribe((data) => {
+            this.obj = data;
+            console.log('Data from server');
+            console.log(this.obj);
+            console.log(data);
+            this.getDistrict();
+        });
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.obj.distributorId = this.AuthService.getId();
+            this.retailerService.putData(this.obj).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../retailerList']);
+            });
+        }
+    }
+    onStateChange(args) {
+        this.obj.businessAddress.state = args.target.value;
+        this.getDistrict();
+        this.obj.businessAddress.district = this.dists[0].Name;
+    }
+    getDistrict() {
+        var stateName = this.obj.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+    }
+    validateRecord() {
+        alert(this.obj.fname);
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.fname)) || this.obj.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.lname)) || this.obj.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.businessContactInformation.email)) || this.obj.businessContactInformation.email == '') {
+            alert('Email is required.');
+            return false;
+        }
     }
 };
-LoginComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+RetailerEditComponent.ctorParameters = () => [
+    { type: _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
+];
+RetailerEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-login-component',
-        template: __webpack_require__(/*! raw-loader!./login-component.component.html */ "./node_modules/raw-loader/index.js!./src/app/login-component/login-component.component.html"),
-        styles: [__webpack_require__(/*! ./login-component.component.css */ "./src/app/login-component/login-component.component.css")]
+        selector: 'app-retailer-edit',
+        template: __webpack_require__(/*! raw-loader!./retailer-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/retailer-edit/retailer-edit.component.html"),
+        styles: [__webpack_require__(/*! ./retailer-edit.component.css */ "./src/app/retailer-edit/retailer-edit.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-], LoginComponentComponent);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
+], RetailerEditComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/retailer-list/retailer-list.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/retailer-list/retailer-list.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/retailer-list/retailer-list.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/retailer-list/retailer-list.component.ts ***!
+  \**********************************************************/
+/*! exports provided: RetailerListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RetailerListComponent", function() { return RetailerListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/retailer.service */ "./src/app/service/retailer.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+let RetailerListComponent = class RetailerListComponent {
+    constructor(RetailerService, AuthService, router) {
+        this.RetailerService = RetailerService;
+        this.AuthService = AuthService;
+        this.router = router;
+        this.searchText = '';
+        this.ChkForAuth();
+    }
+    ngOnInit() {
+    }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "3") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    loadData() {
+        this.searchText = '';
+        var retailerId = this.AuthService.getId();
+        this.RetailerService.getDataAll(retailerId)
+            .subscribe(data => {
+            this.objCollection = data;
+            (err) => { console.log(err); };
+        });
+    }
+};
+RetailerListComponent.ctorParameters = () => [
+    { type: _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+RetailerListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-retailer-list',
+        template: __webpack_require__(/*! raw-loader!./retailer-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/retailer-list/retailer-list.component.html"),
+        styles: [__webpack_require__(/*! ./retailer-list.component.css */ "./src/app/retailer-list/retailer-list.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+], RetailerListComponent);
 
 
 
@@ -577,7 +1733,7 @@ LoginComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyL3JldGFpbGVyLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -593,20 +1749,106 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RetailerComponent", function() { return RetailerComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/retailer.service */ "./src/app/service/retailer.service.ts");
+/* harmony import */ var _model_Retailer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/Retailer */ "./src/app/model/Retailer.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
 
 
 let RetailerComponent = class RetailerComponent {
-    constructor() { }
+    constructor(retailerService, AuthService, stateService, router, route) {
+        this.retailerService = retailerService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.ChkForAuth();
+        this.obj = new _model_Retailer__WEBPACK_IMPORTED_MODULE_3__["Retailer"]();
+        this.obj.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.obj.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.obj.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+            this.obj.businessAddress.state = this.states[0].Name;
+            this.getDistrict();
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        });
+    }
     ngOnInit() {
     }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "3") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    onStateChange(args) {
+        this.obj.businessAddress.state = args.target.value;
+        this.getDistrict();
+    }
+    getDistrict() {
+        var stateName = this.obj.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+        this.obj.businessAddress.district = this.dists[0].Name;
+    }
+    validateRecord() {
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.fname)) || this.obj.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.lname)) || this.obj.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.obj.email)) || this.obj.email == '') {
+            alert('Email is required.');
+            return false;
+        }
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.obj.distributorId = this.AuthService.getId();
+            this.retailerService.postData(this.obj).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../retailerList']);
+            });
+        }
+    }
 };
+RetailerComponent.ctorParameters = () => [
+    { type: _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
+];
 RetailerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-retailer',
         template: __webpack_require__(/*! raw-loader!./retailer.component.html */ "./node_modules/raw-loader/index.js!./src/app/retailer/retailer.component.html"),
         styles: [__webpack_require__(/*! ./retailer.component.css */ "./src/app/retailer/retailer.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_retailer_service__WEBPACK_IMPORTED_MODULE_2__["RetailerService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
 ], RetailerComponent);
 
 
@@ -636,7 +1878,7 @@ let AppSettingsService = class AppSettingsService {
         this.myHttpClient = myHttpClient;
     }
     getSettings() {
-        return this.myHttpClient.get("/src/app/config/appsettings.json");
+        return this.myHttpClient.get("./assets/appSettings.json");
     }
     extractData(res) {
         let body = res.json();
@@ -656,6 +1898,366 @@ AppSettingsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], AppSettingsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/app-storage.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/service/app-storage.service.ts ***!
+  \************************************************/
+/*! exports provided: AppStorageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppStorageService", function() { return AppStorageService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.js");
+/* harmony import */ var _model_app_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/app-storage */ "./src/app/model/app-storage.ts");
+
+
+
+
+let AppStorageService = class AppStorageService {
+    constructor(storage, appStoragea) {
+        this.storage = storage;
+        this.appStoragea = appStoragea;
+    }
+    setUserNameInLocal(value) {
+        this.appStoragea.UserName = value;
+    }
+    getGetNameInLocal() {
+        return this.appStoragea.UserName;
+    }
+    setParentCompanyIdInLocal(value) {
+        this.appStoragea.ParentCompanyId = value;
+    }
+    getParentCompanyIdInLocal() {
+        return this.appStoragea.ParentCompanyId;
+    }
+};
+AppStorageService.ctorParameters = () => [
+    { type: angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["WebStorageService"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["LOCAL_STORAGE"],] }] },
+    { type: _model_app_storage__WEBPACK_IMPORTED_MODULE_3__["AppStorage"] }
+];
+AppStorageService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["LOCAL_STORAGE"])),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angular_webstorage_service__WEBPACK_IMPORTED_MODULE_2__["WebStorageService"], _model_app_storage__WEBPACK_IMPORTED_MODULE_3__["AppStorage"]])
+], AppStorageService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/auth.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/service/auth.service.ts ***!
+  \*****************************************/
+/*! exports provided: AuthService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _model_LogInUser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/LogInUser */ "./src/app/model/LogInUser.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _app_settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-settings.service */ "./src/app/service/app-settings.service.ts");
+
+
+
+
+
+
+let AuthService = class AuthService {
+    constructor(router, myHttpclient, appSettingsService) {
+        this.router = router;
+        this.myHttpclient = myHttpclient;
+        this.appSettingsService = appSettingsService;
+        appSettingsService.getSettings().subscribe(data => this.myAppSetting = data);
+    }
+    login(userName, passWord) {
+        localStorage.setItem('ACCESS_TOKEN', "access_token");
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/LogInUser/' + userName + '/' + passWord;
+        return this.myHttpclient.get(url);
+    }
+    setAccessToken(data) {
+        localStorage.setItem('ACCESS_TOKEN', JSON.stringify(_model_LogInUser__WEBPACK_IMPORTED_MODULE_2__["LogInUser"]));
+        localStorage.setItem('id', data.id);
+        localStorage.setItem('ParentCompanyId', data.parentCompanyId);
+        localStorage.setItem('companyName', data.companyName);
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('fname', data.fname);
+        localStorage.setItem('lname', data.lname);
+        localStorage.setItem('parentCompanyName', data.parentCompanyName);
+        localStorage.setItem('roleId', data.roleId.toString());
+        localStorage.setItem('roleName', data.roleName);
+    }
+    getAccessToken() {
+        return localStorage.getItem('ACCESS_TOKEN');
+    }
+    getId() {
+        return localStorage.getItem('id');
+    }
+    getParentCompanyId() {
+        return localStorage.getItem('ParentCompanyId');
+    }
+    getCompanyName() {
+        return localStorage.getItem('companyName');
+    }
+    getEmail() {
+        return localStorage.getItem('email');
+    }
+    getFname() {
+        return localStorage.getItem('fname');
+    }
+    getLname() {
+        return localStorage.getItem('lname');
+    }
+    getParentCompanyName() {
+        return localStorage.getItem('parentCompanyName');
+    }
+    getRoleId() {
+        return localStorage.getItem('roleId');
+    }
+    getRoleName() {
+        return localStorage.getItem('roleName');
+    }
+    isLoggedIn() {
+        return localStorage.getItem('ACCESS_TOKEN') !== null;
+    }
+    logout() {
+        localStorage.removeItem('ACCESS_TOKEN');
+        localStorage.removeItem('id');
+        localStorage.removeItem('ParentCompanyId');
+        localStorage.removeItem('companyName');
+        localStorage.removeItem('email');
+        localStorage.removeItem('fname');
+        localStorage.removeItem('lname');
+        localStorage.removeItem('parentCompanyName');
+        localStorage.removeItem('roleId');
+        localStorage.removeItem('roleName');
+        this.router.navigateByUrl('/login');
+    }
+};
+AuthService.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] },
+    { type: _app_settings_service__WEBPACK_IMPORTED_MODULE_5__["AppSettingsService"] }
+];
+AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"], _app_settings_service__WEBPACK_IMPORTED_MODULE_5__["AppSettingsService"]])
+], AuthService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/distributor.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/service/distributor.service.ts ***!
+  \************************************************/
+/*! exports provided: DistributorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DistributorService", function() { return DistributorService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-settings.service */ "./src/app/service/app-settings.service.ts");
+
+
+
+
+
+let DistributorService = class DistributorService {
+    constructor(myHttpclient, appSettingsService) {
+        this.myHttpclient = myHttpclient;
+        this.appSettingsService = appSettingsService;
+        appSettingsService.getSettings().subscribe(data => this.myAppSetting = data);
+    }
+    getData(id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Distributor/' + id;
+        return this.myHttpclient.get(url);
+    }
+    getDataAll(superStokictId) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Distributor/' + superStokictId + '/0';
+        return this.myHttpclient.get(url);
+    }
+    postData(distributor) {
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Distributor';
+        return this.myHttpclient.post(url, distributor, httpOptions).subscribe(data => {
+            console.log("POST Request is successful ", data);
+            return data;
+        }, error => {
+            console.log("Error", error);
+        });
+    }
+    putData(distributor) {
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Distributor';
+        return this.myHttpclient.put(url, distributor, httpOptions).subscribe(data => {
+            console.log("PUT Request is successful ", data);
+        }, error => {
+            console.log("Error", error);
+        });
+    }
+};
+DistributorService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"] }
+];
+DistributorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
+], DistributorService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/retailer.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/service/retailer.service.ts ***!
+  \*********************************************/
+/*! exports provided: RetailerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RetailerService", function() { return RetailerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-settings.service */ "./src/app/service/app-settings.service.ts");
+
+
+
+
+
+let RetailerService = class RetailerService {
+    constructor(myHttpclient, appSettingsService) {
+        this.myHttpclient = myHttpclient;
+        this.appSettingsService = appSettingsService;
+        appSettingsService.getSettings().subscribe(data => this.myAppSetting = data);
+    }
+    getData(id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Retailer/' + id;
+        return this.myHttpclient.get(url);
+    }
+    getDataAll(distributorId) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Retailer/' + distributorId + '/0';
+        return this.myHttpclient.get(url);
+    }
+    postData(retailer) {
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Retailer';
+        return this.myHttpclient.post(url, retailer, httpOptions).subscribe(data => {
+            console.log("POST Request is successful ", data);
+            return data;
+        }, error => {
+            console.log("Error", error);
+        });
+    }
+    putData(retailer) {
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Retailer';
+        return this.myHttpclient.put(url, retailer, httpOptions).subscribe(data => {
+            console.log("PUT Request is successful ", data);
+        }, error => {
+            console.log("Error", error);
+        });
+    }
+};
+RetailerService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"] }
+];
+RetailerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
+], RetailerService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/state.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/service/state.service.ts ***!
+  \******************************************/
+/*! exports provided: StateService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StateService", function() { return StateService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let StateService = class StateService {
+    constructor(myHttpClient) {
+        this.myHttpClient = myHttpClient;
+    }
+    getStates() {
+        return this.myHttpClient.get("./assets/state.json");
+    }
+};
+StateService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+StateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], StateService);
 
 
 
@@ -689,21 +2291,11 @@ let SuperStockistService = class SuperStockistService {
     getData(id) {
         var url = this.myAppSetting.baseUrl;
         url = url + '/SuperStockist/' + id;
-        return this.myHttpclient.get(url)
-            .subscribe({
-            next: (data) => {
-                return data;
-            },
-            error: (err) => {
-                console.log('An error...');
-                console.log(err);
-            },
-            complete: () => { console.log('call complete'); }
-        });
+        return this.myHttpclient.get(url);
     }
     getDataAll(parentCompanyId) {
-        //var url = this.myAppSetting.baseUrl;
-        var url = 'https://localhost:5001/api';
+        var url = this.myAppSetting.baseUrl;
+        //var url = 'https://localhost:5001/api';
         url = url + '/SuperStockist/' + parentCompanyId + '/0';
         return this.myHttpclient.get(url);
         /*.subscribe(
@@ -724,10 +2316,12 @@ let SuperStockistService = class SuperStockistService {
                 'Content-Type': 'application/json'
             })
         };
+        //var url = this.myAppSetting.baseUrl;
         var url = this.myAppSetting.baseUrl;
         url = url + '/SuperStockist';
-        this.myHttpclient.post(url, superStockist, httpOptions).subscribe(data => {
+        return this.myHttpclient.post(url, superStockist, httpOptions).subscribe(data => {
             console.log("POST Request is successful ", data);
+            return data;
         }, error => {
             console.log("Error", error);
         });
@@ -738,7 +2332,9 @@ let SuperStockistService = class SuperStockistService {
                 'Content-Type': 'application/json'
             })
         };
-        this.myHttpclient.put('https://localhost:5001/api/SuperStockist/' + superStockist.ID, superStockist, httpOptions).subscribe(data => {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/SuperStockist';
+        return this.myHttpclient.put(url, superStockist, httpOptions).subscribe(data => {
             console.log("PUT Request is successful ", data);
         }, error => {
             console.log("Error", error);
@@ -760,6 +2356,148 @@ SuperStockistService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/super-stockist-edit/super-stockist-edit.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/super-stockist-edit/super-stockist-edit.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/super-stockist-edit/super-stockist-edit.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/super-stockist-edit/super-stockist-edit.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: SuperStockistEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SuperStockistEditComponent", function() { return SuperStockistEditComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/super-stockist.service */ "./src/app/service/super-stockist.service.ts");
+/* harmony import */ var _model_SuperStockist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/SuperStockist */ "./src/app/model/SuperStockist.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
+
+
+let SuperStockistEditComponent = class SuperStockistEditComponent {
+    constructor(superStockistService, AuthService, stateService, router, route) {
+        this.superStockistService = superStockistService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.superStockist = new _model_SuperStockist__WEBPACK_IMPORTED_MODULE_3__["SuperStockist"]();
+        this.superStockist.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.superStockist.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.superStockist.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.ChkForAuth();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        }).add(() => {
+            route.paramMap.subscribe(p => {
+                this.id = p.get('id');
+                this.getData();
+            });
+        });
+    }
+    ngOnInit() {
+    }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "1") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    getData() {
+        this.superStockistService.getData(this.id).subscribe((data) => {
+            this.superStockist = data;
+            console.log('Data from server');
+            console.log(this.superStockist);
+            console.log(data);
+            this.getDistrict();
+        });
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.superStockist.parentCompanyId = this.AuthService.getParentCompanyId();
+            this.superStockistService.putData(this.superStockist).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../SuperStockistList']);
+            });
+        }
+    }
+    onStateChange(args) {
+        this.superStockist.businessAddress.state = args.target.value;
+        this.getDistrict();
+        this.superStockist.businessAddress.district = this.dists[0].Name;
+    }
+    getDistrict() {
+        var stateName = this.superStockist.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+    }
+    validateRecord() {
+        alert(this.superStockist.fname);
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.fname)) || this.superStockist.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.lname)) || this.superStockist.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.businessContactInformation.email)) || this.superStockist.businessContactInformation.email == '') {
+            alert('Email is required.');
+            return false;
+        }
+    }
+};
+SuperStockistEditComponent.ctorParameters = () => [
+    { type: _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
+];
+SuperStockistEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-super-stockist-edit',
+        template: __webpack_require__(/*! raw-loader!./super-stockist-edit.component.html */ "./node_modules/raw-loader/index.js!./src/app/super-stockist-edit/super-stockist-edit.component.html"),
+        styles: [__webpack_require__(/*! ./super-stockist-edit.component.css */ "./src/app/super-stockist-edit/super-stockist-edit.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
+], SuperStockistEditComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/super-stockist-list/super-stockist-list.component.css":
 /*!***********************************************************************!*\
   !*** ./src/app/super-stockist-list/super-stockist-list.component.css ***!
@@ -767,7 +2505,7 @@ SuperStockistService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0LWxpc3Qvc3VwZXItc3RvY2tpc3QtbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -784,26 +2522,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/super-stockist.service */ "./src/app/service/super-stockist.service.ts");
-/* harmony import */ var _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-settings.service */ "./src/app/service/app-settings.service.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 
 let SuperStockistListComponent = class SuperStockistListComponent {
-    constructor(superStockistService, appSettingsService) {
+    constructor(superStockistService, AuthService, router) {
         this.superStockistService = superStockistService;
-        this.appSettingsService = appSettingsService;
+        this.AuthService = AuthService;
+        this.router = router;
         this.searchText = '';
-        appSettingsService.getSettings().subscribe(data => this.myAppSetting = data);
+        this.ChkForAuth();
     }
     ngOnInit() {
-        this.loadData();
+    }
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "1") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
     }
     loadData() {
         this.searchText = '';
-        this.superStockistService.getDataAll('05008166-6159-493D-15EE-08D712D81DBC')
+        var parentCompanyId = this.AuthService.getParentCompanyId();
+        this.superStockistService.getDataAll(parentCompanyId)
             .subscribe(data => {
-            console.log(data);
             this.superStockists = data;
             (err) => { console.log(err); };
         });
@@ -811,7 +2558,8 @@ let SuperStockistListComponent = class SuperStockistListComponent {
 };
 SuperStockistListComponent.ctorParameters = () => [
     { type: _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"] },
-    { type: _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"] }
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
 ];
 SuperStockistListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -819,7 +2567,7 @@ SuperStockistListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./super-stockist-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/super-stockist-list/super-stockist-list.component.html"),
         styles: [__webpack_require__(/*! ./super-stockist-list.component.css */ "./src/app/super-stockist-list/super-stockist-list.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
 ], SuperStockistListComponent);
 
 
@@ -833,7 +2581,7 @@ SuperStockistListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0L3N1cGVyLXN0b2NraXN0LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -850,27 +2598,98 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/super-stockist.service */ "./src/app/service/super-stockist.service.ts");
+/* harmony import */ var _model_SuperStockist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/SuperStockist */ "./src/app/model/SuperStockist.ts");
+/* harmony import */ var _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessAddress */ "./src/app/model/BusinessAddress.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+
+
 
 
 
 let SuperStockistComponent = class SuperStockistComponent {
-    constructor(superStockistService) {
+    constructor(superStockistService, AuthService, stateService, router, route) {
         this.superStockistService = superStockistService;
-        this.searchText = '';
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.superStockist = new _model_SuperStockist__WEBPACK_IMPORTED_MODULE_3__["SuperStockist"]();
+        this.superStockist.businessAddress = new _model_BusinessAddress__WEBPACK_IMPORTED_MODULE_4__["BusinessAddress"]();
+        this.superStockist.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_5__["BusinessContactInformation"]();
+        this.superStockist.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_6__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(data => {
+            this.states = data;
+            this.superStockist.businessAddress.state = this.states[0].Name;
+            console.log(this.states);
+            this.getDistrict();
+        }, (data) => {
+            console.log('Error getting the state' + data);
+        });
     }
     ngOnInit() {
+        this.ChkForAuth();
     }
-    loadData() {
-        this.searchText = '';
-        this.superStockistService.getDataAll('')
-            .subscribe(data => {
-            this.superStockists = data;
-            (err) => { console.log(err); };
-        });
+    ChkForAuth() {
+        var roleId = this.AuthService.getRoleId();
+        if (roleId != "1") {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    }
+    SaveRecord() {
+        if (this.validateRecord() == false) {
+            return false;
+        }
+        else {
+            this.superStockist.parentCompanyId = this.AuthService.getParentCompanyId();
+            this.superStockistService.postData(this.superStockist).add((data) => {
+                alert('Record Saved');
+                this.router.navigate(['../SuperStockistList']);
+            });
+        }
+    }
+    onStateChange(args) {
+        this.superStockist.businessAddress.state = args.target.value;
+        this.getDistrict();
+    }
+    getDistrict() {
+        var stateName = this.superStockist.businessAddress.state;
+        this.dists = this.states.find(o => o.Name == stateName).Dist;
+        this.superStockist.businessAddress.district = this.dists[0].Name;
+    }
+    validateRecord() {
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.fname)) || this.superStockist.fname.trim() == '') {
+            alert('First name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.lname)) || this.superStockist.lname.trim() == '') {
+            alert('Last name is required.');
+            return false;
+        }
+        if ((Object(util__WEBPACK_IMPORTED_MODULE_9__["isUndefined"])(this.superStockist.email)) || this.superStockist.email == '') {
+            alert('Email is required.');
+            return false;
+        }
     }
 };
 SuperStockistComponent.ctorParameters = () => [
-    { type: _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"] }
+    { type: _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"] },
+    { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"] }
 ];
 SuperStockistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -878,7 +2697,7 @@ SuperStockistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./super-stockist.component.html */ "./node_modules/raw-loader/index.js!./src/app/super-stockist/super-stockist.component.html"),
         styles: [__webpack_require__(/*! ./super-stockist.component.css */ "./src/app/super-stockist/super-stockist.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__["SuperStockistService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_8__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_10__["ActivatedRoute"]])
 ], SuperStockistComponent);
 
 
@@ -892,7 +2711,7 @@ SuperStockistComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3RyYW4tYXNzaWduLXN0b2NrL3RyYW4tYXNzaWduLXN0b2NrLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\r\n"
 
 /***/ }),
 
@@ -995,4 +2814,3 @@ module.exports = __webpack_require__(/*! D:\Debdeep\Mywork\ZT-Web\src\main.ts */
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main-es2015.js.map
