@@ -2222,7 +2222,8 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.login = function (userName, passWord) {
         localStorage.setItem('ACCESS_TOKEN', "access_token");
-        var url = this.myAppSetting.baseUrl;
+        //var url = this.myAppSetting.baseUrl;
+        var url = "https://gerpapi-uat.azurewebsites.net/api";
         url = url + '/LogInUser/' + userName + '/' + passWord;
         return this.myHttpclient.get(url);
     };
