@@ -74,7 +74,7 @@ module.exports = "<div class=\"container\">\n    <span class=\"Header\">Distribu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Distributor</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/distributorAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterByMatchText : searchText\">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/distributorEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delDistributor']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Distributor</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n        <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n              Search \n        </span>\n        <p></p>\n          <span id=\"filterSpanBox\">\n              First Name :\n              <input [(ngModel)]=\"filterCriteria.Fname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\"> \n          </span>\n          <span id=\"filterSpanBox\">\n              Last Name :\n              <input [(ngModel)]=\"filterCriteria.Lname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\">   \n          </span> \n          <span id=\"filterSpanBox\">\n              Email :\n              <input [(ngModel)]=\"filterCriteria.Email\" placeholder=\"\" style=\"width: 250px;\" id=\"filterInputBox\">   \n          </span>             \n                    \n         \n      </div>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/distributorAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterObjArrayByMatchProperty : filterCriteria : '' \">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/distributorEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delDistributor']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -129,7 +129,7 @@ module.exports = "<div class=\"container\">\n    <span class=\"Header\">Retailer
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Retailer</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/retailerAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterByMatchText : searchText\">\n                                <td>{{obj.fname}}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/retailerEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delRetailer']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Retailer</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n        <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n              Search \n        </span>\n        <p></p>\n          <span id=\"filterSpanBox\">\n              First Name :\n              <input [(ngModel)]=\"filterCriteria.Fname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\"> \n          </span>\n          <span id=\"filterSpanBox\">\n              Last Name :\n              <input [(ngModel)]=\"filterCriteria.Lname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\">   \n          </span> \n          <span id=\"filterSpanBox\">\n              Email :\n              <input [(ngModel)]=\"filterCriteria.Email\" placeholder=\"\" style=\"width: 250px;\" id=\"filterInputBox\">   \n          </span>             \n                    \n         \n      </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/retailerAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of objCollection | filterObjArrayByMatchProperty : filterCriteria : ''\">\n                                <td>{{obj.fname}}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/retailerEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delRetailer']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -162,7 +162,7 @@ module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">Su
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Super Stockist</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search : \n          </span>\n        \n            <input [(ngModel)]=\"searchText\" placeholder=\"search text goes here\" style=\"width: 300px;\">              \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/superStockistAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of superStockists | filterByMatchText : searchText\">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.businessContactInformation.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/superStockistEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delEmp']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Super Stockist</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search \n          </span>\n          <p></p>\n            <span id=\"filterSpanBox\">\n                First Name :\n                <input [(ngModel)]=\"filterCriteria.Fname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\"> \n            </span>\n            <span id=\"filterSpanBox\">\n                Last Name :\n                <input [(ngModel)]=\"filterCriteria.Lname\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\">   \n            </span> \n            <span id=\"filterSpanBox\">\n                Email :\n                <input [(ngModel)]=\"filterCriteria.Email\" placeholder=\"\" style=\"width: 250px;\" id=\"filterInputBox\">   \n            </span>             \n                      \n           \n        </div>\n        <p></p>\n        <div style=\"width: 850px; text-align: right;\">\n                <a [routerLink]=\"['/superStockistAdd']\" routerLinkActive=\"router-link-active\">Add Record</a>   \n        </div>\n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">First Name</th>                        \n                                <th style=\"width: 100px;\">Last Name</th>\n                                <th style=\"width: 100px;\">Email</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Outlate Name</th>\n                                <th style=\"width: 100px;\">Region</th>\n                                <th style=\"width: 100px;\">Dist.</th>\n                                <th style=\"width: 50px;\"></th>\n                                <th style=\"width: 50px;\"></th>\n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of superStockists | filterObjArrayByMatchProperty : filterCriteria : '' \">\n                                <td>{{obj.fname }}</td>\n                                <td>{{obj.lname}}</td>\n                                <td>{{obj.email}}</td>\n                                <td>{{obj.businessContactInformation.mobNoPrimary}}</td>                                    \n                                <td>{{obj.businessAddress.outLateName}}</td>\n                                <td>{{obj.businessAddress.region}}</td>\n                                <td>{{obj.businessAddress.district}}</td>\n                                <td>\n                                        <a [routerLink]=\"['/superStockistEdit',obj.id]\" routerLinkActive=\"router-link-active\">Edit</a>                                       \n                                </td>\n                                <td>\n                                        <a [routerLink]=\"['/delEmp']\" routerLinkActive=\"router-link-active\">Del</a>    \n                                </td>\n                                \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -423,6 +423,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./retailer-edit/retailer-edit.component */ "./src/app/retailer-edit/retailer-edit.component.ts");
 /* harmony import */ var _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./retailer-list/retailer-list.component */ "./src/app/retailer-list/retailer-list.component.ts");
 /* harmony import */ var _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./distributor-list/distributor-list.component */ "./src/app/distributor-list/distributor-list.component.ts");
+/* harmony import */ var _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./filter/filter-obj-array-by-match-property.pipe */ "./src/app/filter/filter-obj-array-by-match-property.pipe.ts");
+
 
 
 
@@ -469,6 +471,7 @@ var AppModule = /** @class */ (function () {
                 _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"],
                 _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"],
                 _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"],
+                _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__["FilterObjArrayByMatchPropertyPipe"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -480,7 +483,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [_model_app_storage__WEBPACK_IMPORTED_MODULE_17__["AppStorage"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
-            exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"], _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"], _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"], _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"], _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"], _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"]]
+            exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"], _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"], _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"], _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"], _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"], _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"], _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__["FilterObjArrayByMatchPropertyPipe"]]
         })
     ], AppModule);
     return AppModule;
@@ -752,6 +755,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_distributor_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/distributor.service */ "./src/app/service/distributor.service.ts");
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/FilterCriteria */ "./src/app/model/FilterCriteria.ts");
+
 
 
 
@@ -762,8 +767,8 @@ var DistributorListComponent = /** @class */ (function () {
         this.DistributorService = DistributorService;
         this.AuthService = AuthService;
         this.router = router;
-        this.searchText = '';
         this.ChkForAuth();
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
     }
     DistributorListComponent.prototype.ngOnInit = function () {
     };
@@ -776,7 +781,7 @@ var DistributorListComponent = /** @class */ (function () {
     };
     DistributorListComponent.prototype.loadData = function () {
         var _this = this;
-        this.searchText = '';
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
         var superStockistId = this.AuthService.getId();
         this.DistributorService.getDataAll(superStockistId)
             .subscribe(function (data) {
@@ -953,24 +958,114 @@ __webpack_require__.r(__webpack_exports__);
 var FilterByMatchTextPipe = /** @class */ (function () {
     function FilterByMatchTextPipe() {
     }
-    FilterByMatchTextPipe.prototype.transform = function (value, criteria) {
-        if (!value)
-            return [];
-        if (!criteria)
-            return value;
-        return value.filter(function (i) {
-            for (var key in i) {
-                if (("" + i[key]).includes(criteria))
-                    return true;
-            }
-        });
+    FilterByMatchTextPipe.prototype.transform = function (items, criteria, propname) {
+        if (!items || !criteria) {
+            return items;
+        }
+        var result = items.filter(function (item) { return item[propname].indexOf(criteria) !== -1; });
+        console.log(result);
+        return result;
     };
     FilterByMatchTextPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
-            name: 'filterByMatchText'
+            name: 'filterByMatchText',
+            pure: false
         })
     ], FilterByMatchTextPipe);
     return FilterByMatchTextPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/filter/filter-obj-array-by-match-property.pipe.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/filter/filter-obj-array-by-match-property.pipe.ts ***!
+  \*******************************************************************/
+/*! exports provided: FilterObjArrayByMatchPropertyPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterObjArrayByMatchPropertyPipe", function() { return FilterObjArrayByMatchPropertyPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! util */ "./node_modules/util/util.js");
+/* harmony import */ var util__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(util__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var FilterObjArrayByMatchPropertyPipe = /** @class */ (function () {
+    function FilterObjArrayByMatchPropertyPipe() {
+    }
+    FilterObjArrayByMatchPropertyPipe.prototype.transform = function (items, criteria, propname) {
+        var result = [];
+        if (!items || !criteria) {
+            return items;
+        }
+        var hasNoFilter = true;
+        var props = Object.keys(criteria);
+        props.forEach(function (p) {
+            if (!Object(util__WEBPACK_IMPORTED_MODULE_2__["isUndefined"])(criteria[p]) && (criteria[p] != '')) {
+                hasNoFilter = false;
+            }
+        });
+        if (hasNoFilter) {
+            return items;
+        }
+        if (propname != '') {
+            result = items.filter(function (item) { return item[propname].indexOf(criteria[propname]) !== -1; });
+        }
+        else {
+            result = this.filterByCriteriaObject(items, criteria, result);
+        }
+        return result;
+    };
+    FilterObjArrayByMatchPropertyPipe.prototype.filterByCriteriaObject = function (items, criteria, result) {
+        var _this = this;
+        var props = Object.keys(items[0]);
+        items.forEach(function (i) {
+            var itemFound = true;
+            props.forEach(function (prop) {
+                itemFound = _this.filterByStringcDataValue(i, prop, criteria, itemFound);
+                itemFound = _this.filterByNumericDataValue(i, prop, criteria, itemFound);
+            });
+            if (itemFound) {
+                result.push(i);
+            }
+        });
+        return result;
+    };
+    FilterObjArrayByMatchPropertyPipe.prototype.filterByStringcDataValue = function (i, prop, criteria, itemFound) {
+        if (Object(util__WEBPACK_IMPORTED_MODULE_2__["isString"])(i[prop])) {
+            var propValue = i[prop];
+            if ((!Object(util__WEBPACK_IMPORTED_MODULE_2__["isUndefined"])(criteria[prop])) && (criteria[prop] != '')) {
+                if (propValue.indexOf(criteria[prop]) == -1) {
+                    itemFound = false;
+                }
+            }
+        }
+        return itemFound;
+    };
+    FilterObjArrayByMatchPropertyPipe.prototype.filterByNumericDataValue = function (i, prop, criteria, itemFound) {
+        if (Object(util__WEBPACK_IMPORTED_MODULE_2__["isNumber"])(i[prop])) {
+            var propValue = "" + i[prop];
+            if ((!Object(util__WEBPACK_IMPORTED_MODULE_2__["isUndefined"])(criteria[prop])) && (criteria[prop] != '')) {
+                if (propValue.indexOf(criteria[prop]) == -1) {
+                    itemFound = false;
+                }
+            }
+        }
+        return itemFound;
+    };
+    FilterObjArrayByMatchPropertyPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'filterObjArrayByMatchProperty',
+            pure: false
+        })
+    ], FilterObjArrayByMatchPropertyPipe);
+    return FilterObjArrayByMatchPropertyPipe;
 }());
 
 
@@ -1352,6 +1447,56 @@ var Distributor = /** @class */ (function (_super) {
     });
     return Distributor;
 }(_user__WEBPACK_IMPORTED_MODULE_1__["user"]));
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/FilterCriteria.ts":
+/*!*****************************************!*\
+  !*** ./src/app/model/FilterCriteria.ts ***!
+  \*****************************************/
+/*! exports provided: FilterCriteria */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterCriteria", function() { return FilterCriteria; });
+var FilterCriteria = /** @class */ (function () {
+    function FilterCriteria() {
+    }
+    Object.defineProperty(FilterCriteria.prototype, "Fname", {
+        get: function () {
+            return this.fname;
+        },
+        set: function (v) {
+            this.fname = v;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FilterCriteria.prototype, "Lname", {
+        get: function () {
+            return this.lname;
+        },
+        set: function (v) {
+            this.lname = v;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FilterCriteria.prototype, "Email", {
+        get: function () {
+            return this.email;
+        },
+        set: function (v) {
+            this.email = v;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return FilterCriteria;
+}());
 
 
 
@@ -1904,6 +2049,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_retailer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/retailer.service */ "./src/app/service/retailer.service.ts");
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/FilterCriteria */ "./src/app/model/FilterCriteria.ts");
+
 
 
 
@@ -1914,8 +2061,8 @@ var RetailerListComponent = /** @class */ (function () {
         this.RetailerService = RetailerService;
         this.AuthService = AuthService;
         this.router = router;
-        this.searchText = '';
         this.ChkForAuth();
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
     }
     RetailerListComponent.prototype.ngOnInit = function () {
     };
@@ -1928,7 +2075,7 @@ var RetailerListComponent = /** @class */ (function () {
     };
     RetailerListComponent.prototype.loadData = function () {
         var _this = this;
-        this.searchText = '';
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
         var retailerId = this.AuthService.getId();
         this.RetailerService.getDataAll(retailerId)
             .subscribe(function (data) {
@@ -2222,8 +2369,8 @@ var AuthService = /** @class */ (function () {
     }
     AuthService.prototype.login = function (userName, passWord) {
         localStorage.setItem('ACCESS_TOKEN', "access_token");
-        //var url = this.myAppSetting.baseUrl;
-        var url = "https://gerpapi-uat.azurewebsites.net/api";
+        var url = this.myAppSetting.baseUrl;
+        //var url = "https://gerpapi-uat.azurewebsites.net/api"
         url = url + '/LogInUser/' + userName + '/' + passWord;
         return this.myHttpclient.get(url);
     };
@@ -2773,6 +2920,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/super-stockist.service */ "./src/app/service/super-stockist.service.ts");
 /* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/FilterCriteria */ "./src/app/model/FilterCriteria.ts");
+
 
 
 
@@ -2783,8 +2932,11 @@ var SuperStockistListComponent = /** @class */ (function () {
         this.superStockistService = superStockistService;
         this.AuthService = AuthService;
         this.router = router;
-        this.searchText = '';
         this.ChkForAuth();
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
+        //this.filterCriteria.Fname='';
+        //this.filterCriteria.Lname='';
+        //this.filterCriteria.Email='';
     }
     SuperStockistListComponent.prototype.ngOnInit = function () {
     };
@@ -2797,7 +2949,10 @@ var SuperStockistListComponent = /** @class */ (function () {
     };
     SuperStockistListComponent.prototype.loadData = function () {
         var _this = this;
-        this.searchText = '';
+        this.filterCriteria = new _model_FilterCriteria__WEBPACK_IMPORTED_MODULE_5__["FilterCriteria"]();
+        //this.filterCriteria.Fname='';
+        //this.filterCriteria.Lname='';
+        //this.filterCriteria.Email='';
         var parentCompanyId = this.AuthService.getParentCompanyId();
         this.superStockistService.getDataAll(parentCompanyId)
             .subscribe(function (data) {
