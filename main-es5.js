@@ -206,7 +206,7 @@ module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Super 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudC9zdG9jay1saXN0L3N0b2NrLWxpc3QuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ""
 
 /***/ }),
 
@@ -375,7 +375,7 @@ var filterCriteria = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudC90cmFuLWFzc2lnbi1zdG9jay90cmFuLWFzc2lnbi1zdG9jay5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\r\n"
 
 /***/ }),
 
@@ -644,7 +644,7 @@ var filterCriteria = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0LWNvbXBvbWVudC9hYm91dC1jb21wb21lbnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ""
 
 /***/ }),
 
@@ -771,7 +771,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -802,8 +802,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(appStorageService, AuthService) {
         this.appStorageService = appStorageService;
         this.AuthService = AuthService;
-        /*title = 'ZETTRACK INDIA';*/
-        this.title = '......';
+        this.title = 'ZETTRACK INDIA';
         this.data = [];
         this.appStorageService.setUserNameInLocal('Admin');
         this.appStorageService.setParentCompanyIdInLocal('05008166-6159-493D-15EE-08D712D81DBC');
@@ -1003,7 +1002,7 @@ var AuthGuard = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2J1c2luZXNzLWFzc29jaWF0ZS9idXNpbmVzcy1hc3NvY2lhdGUuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ""
 
 /***/ }),
 
@@ -1096,7 +1095,7 @@ var BusinessAssociateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yLWVkaXQvZGlzdHJpYnV0b3ItZWRpdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -1245,7 +1244,7 @@ var DistributorEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yLWxpc3QvZGlzdHJpYnV0b3ItbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -1325,7 +1324,7 @@ var DistributorListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yL2Rpc3RyaWJ1dG9yLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -1667,7 +1666,7 @@ var FilterObjArrayByMatchPropertyPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtY29tcG9tZW50L2hvbWUtY29tcG9tZW50LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -1719,7 +1718,7 @@ var HomeCompomentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\r\n    width: 400px;\r\n    margin: 16px auto;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  .login-header,\r\n  .login p {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .login-triangle {\r\n    width: 0;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    border: 12px solid transparent;\r\n    border-bottom-color: rgb(15, 66, 107);\r\n  }\r\n  \r\n  .login-header {\r\n    background: rgb(12, 77, 129);\r\n    padding: 20px;\r\n    font-size: 1.4em;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    color: #fff;\r\n  }\r\n  \r\n  .login-container {\r\n    background: #ebebeb;\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login p {\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login input {\r\n    box-sizing: border-box;\r\n    display: block;\r\n    width: 100%;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    padding: 16px;\r\n    outline: 0;\r\n    font-family: inherit;\r\n    font-size: 0.95em;\r\n  }\r\n  \r\n  .login input[type=\"email\"],\r\n  .login input[type=\"password\"] {\r\n    background: #fff;\r\n    border-color: #bbb;\r\n    color: #555;\r\n  }\r\n  \r\n  .login input[type=\"email\"]:focus,\r\n  .login input[type=\"password\"]:focus {\r\n    border-color: #888;\r\n  }\r\n  \r\n  .login input[type=\"submit\"] {\r\n    background: rgb(1, 29, 51);\r\n    border-color: transparent;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:hover {\r\n    background: #17c;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:focus {\r\n    border-color: #05a;\r\n  }\r\n  \r\n  .has-error input[type=\"email\"],\r\n.has-error input[type=\"password\"] {\r\n    border-color: rgb(216, 12, 12);\r\n    color: rgb(230, 14, 14);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsZUFBZTtFQUNqQjs7RUFFQTs7SUFFRSxhQUFhO0lBQ2IsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsUUFBUTtJQUNSLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsOEJBQThCO0lBQzlCLHFDQUFxQztFQUN2Qzs7RUFFQTtJQUNFLDRCQUE0QjtJQUM1QixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIseUJBQXlCO0lBQ3pCLFdBQVc7RUFDYjs7RUFFQTtJQUNFLG1CQUFtQjtJQUNuQixhQUFhO0VBQ2Y7O0VBRUE7SUFDRSxhQUFhO0VBQ2Y7O0VBRUE7SUFDRSxzQkFBc0I7SUFDdEIsY0FBYztJQUNkLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixVQUFVO0lBQ1Ysb0JBQW9CO0lBQ3BCLGlCQUFpQjtFQUNuQjs7RUFFQTs7SUFFRSxnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFdBQVc7RUFDYjs7RUFFQTs7SUFFRSxrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSwwQkFBMEI7SUFDMUIseUJBQXlCO0lBQ3pCLFdBQVc7SUFDWCxlQUFlO0VBQ2pCOztFQUVBO0lBQ0UsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0Usa0JBQWtCO0VBQ3BCOztFQUVEOztJQUVHLDhCQUE4QjtJQUM5Qix1QkFBdUI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcclxuICAgIHdpZHRoOiA0MDBweDtcclxuICAgIG1hcmdpbjogMTZweCBhdXRvO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gIH1cclxuICBcclxuICAubG9naW4taGVhZGVyLFxyXG4gIC5sb2dpbiBwIHtcclxuICAgIG1hcmdpbi10b3A6IDA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gIH1cclxuICBcclxuICAubG9naW4tdHJpYW5nbGUge1xyXG4gICAgd2lkdGg6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIGJvcmRlcjogMTJweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHJnYigxNSwgNjYsIDEwNyk7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2dpbi1oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDEyLCA3NywgMTI5KTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBmb250LXNpemU6IDEuNGVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luLWNvbnRhaW5lciB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWJlYmViO1xyXG4gICAgcGFkZGluZzogMTJweDtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIHAge1xyXG4gICAgcGFkZGluZzogMTJweDtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0IHtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXdpZHRoOiAxcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIG91dGxpbmU6IDA7XHJcbiAgICBmb250LWZhbWlseTogaW5oZXJpdDtcclxuICAgIGZvbnQtc2l6ZTogMC45NWVtO1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdLFxyXG4gIC5sb2dpbiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlci1jb2xvcjogI2JiYjtcclxuICAgIGNvbG9yOiAjNTU1O1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdOmZvY3VzLFxyXG4gIC5sb2dpbiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl06Zm9jdXMge1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjODg4O1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cInN1Ym1pdFwiXSB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMSwgMjksIDUxKTtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0W3R5cGU9XCJzdWJtaXRcIl06aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZDogIzE3YztcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0W3R5cGU9XCJzdWJtaXRcIl06Zm9jdXMge1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjMDVhO1xyXG4gIH1cclxuXHJcbiAuaGFzLWVycm9yIGlucHV0W3R5cGU9XCJlbWFpbFwiXSxcclxuLmhhcy1lcnJvciBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMjE2LCAxMiwgMTIpO1xyXG4gICAgY29sb3I6IHJnYigyMzAsIDE0LCAxNCk7XHJcbn0iXX0= */"
+module.exports = ".login {\r\n    width: 400px;\r\n    margin: 16px auto;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  .login-header,\r\n  .login p {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .login-triangle {\r\n    width: 0;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    border: 12px solid transparent;\r\n    border-bottom-color: rgb(15, 66, 107);\r\n  }\r\n  \r\n  .login-header {\r\n    background: rgb(12, 77, 129);\r\n    padding: 20px;\r\n    font-size: 1.4em;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    color: #fff;\r\n  }\r\n  \r\n  .login-container {\r\n    background: #ebebeb;\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login p {\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login input {\r\n    box-sizing: border-box;\r\n    display: block;\r\n    width: 100%;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    padding: 16px;\r\n    outline: 0;\r\n    font-family: inherit;\r\n    font-size: 0.95em;\r\n  }\r\n  \r\n  .login input[type=\"email\"],\r\n  .login input[type=\"password\"] {\r\n    background: #fff;\r\n    border-color: #bbb;\r\n    color: #555;\r\n  }\r\n  \r\n  .login input[type=\"email\"]:focus,\r\n  .login input[type=\"password\"]:focus {\r\n    border-color: #888;\r\n  }\r\n  \r\n  .login input[type=\"submit\"] {\r\n    background: rgb(1, 29, 51);\r\n    border-color: transparent;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:hover {\r\n    background: #17c;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:focus {\r\n    border-color: #05a;\r\n  }\r\n  \r\n  .has-error input[type=\"email\"],\r\n.has-error input[type=\"password\"] {\r\n    border-color: rgb(216, 12, 12);\r\n    color: rgb(230, 14, 14);\r\n}"
 
 /***/ }),
 
@@ -2518,7 +2517,7 @@ var user = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyLWVkaXQvcmV0YWlsZXItZWRpdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -2664,7 +2663,7 @@ var RetailerEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyLWxpc3QvcmV0YWlsZXItbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -2744,7 +2743,7 @@ var RetailerListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyL3JldGFpbGVyLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -3587,7 +3586,7 @@ var SuperStockistService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0LWVkaXQvc3VwZXItc3RvY2tpc3QtZWRpdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -3733,7 +3732,7 @@ var SuperStockistEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0LWxpc3Qvc3VwZXItc3RvY2tpc3QtbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ""
 
 /***/ }),
 
@@ -3820,7 +3819,7 @@ var SuperStockistListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0L3N1cGVyLXN0b2NraXN0LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ""
 
 /***/ }),
 
@@ -4013,4 +4012,3 @@ module.exports = __webpack_require__(/*! D:\Debdeep\Mywork\ZT-Web\src\main.ts */
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main-es5.js.map
