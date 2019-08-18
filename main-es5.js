@@ -23,6 +23,28 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/Component/stock-list/stock-list.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/Component/stock-list/stock-list.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"divContainer\">\n    <div>\n            <span class=\"Header\">Stock</span>\n            <p></p>\n            <span>------------------------------------------</span>\n    </div>\n    <div style=\"padding-top: 20px;\">\n          <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\n                Search \n          </span>\n          <p></p>\n            <span id=\"filterSpanBox\">\n                Name :\n                <input [(ngModel)]=\"filterCriteria.deviceName\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\"> \n            </span>\n            <span id=\"filterSpanBox\">\n                Id :\n                <input [(ngModel)]=\"filterCriteria.deviceId\" placeholder=\"\" style=\"width: 150px;\" id=\"filterInputBox\">   \n            </span> \n            <span id=\"filterSpanBox\">\n                SimNo :\n                <input [(ngModel)]=\"filterCriteria.simNo\" placeholder=\"\" style=\"width: 75px;\" id=\"filterInputBox\">   \n            </span>\n            <span id=\"filterSpanBox\">\n                Activation State :\n                <input [(ngModel)]=\"filterCriteria.activatinonState\" placeholder=\"\" style=\"width: 75px;\" id=\"filterInputBox\">   \n            </span>  \n            <span id=\"filterSpanBox\">\n                Sim Provider :\n                <input [(ngModel)]=\"filterCriteria.simProvider\" placeholder=\"\" style=\"width: 75px;\" id=\"filterInputBox\">   \n            </span>             \n                      \n           \n        </div>\n        <p></p>\n        \n        <div style=\"padding-top: 20px;\">  \n                <table>\n                    <thead>\n                        <tr>\n                                <th style=\"width: 100px;\">Device Name</th>                        \n                                <th style=\"width: 100px;\">Device Id</th>\n                                <th style=\"width: 100px;\">SimNo</th>                                   \n                                <th style=\"width: 100px;\">Mob Primar</th>\n                                <th style=\"width: 150px;\">Belongs To</th>\n                                <th style=\"width: 150px;\">Activatinon State</th>\n                                <th style=\"width: 150px;\">Sim Provider</th>\n                                <th style=\"width: 150px;\" *ngIf=\"this.roleId!='1'\">Act. Req.</th>   \n                                <th style=\"width: 150px;\" *ngIf=\"this.roleId=='1'\" >Activate</th>                                \n                        </tr>\n                    </thead>                \n                        <tbody>\n                            <tr *ngFor=\"let obj of stocks | filterObjArrayByMatchProperty : filterCriteria : '' \">\n                                <td>{{obj.deviceName }}</td>\n                                <td>{{obj.deviceId}}</td>\n                                <td>{{obj.simNo}}</td>\n                                <td>{{obj.mobNoPrimary}}</td>                                    \n                                <td>{{obj.belongsToName}}</td>\n                                <td>{{obj.activatinonState | deviceActivationStateType }}</td>\n                                <td>{{obj.simProvider}}</td>                             \n                                <td *ngIf=\"this.roleId!='1'\"><input type=\"button\" value=\"Req.\" (click)=\"sendActivationReqest(obj)\" *ngIf=\"obj.activatinonState=='Not Active' && this.roleId!='1'\" ></td>  \n                                <td><input type=\"button\" value=\"Activate\" (click)=\"doActivation(obj)\" *ngIf=\"obj.activatinonState=='In Progress' && this.roleId=='1'\" ></td>   \n                            </tr>\n                        </tbody>\n                    </table>\n        </div>\n        <p></p>\n        <div>\n            <button (click)=\"loadData()\">Load Data</button>\n           \n        </div>\n</div>\n\n\n\n\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/Component/tran-assign-stock/tran-assign-stock.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/Component/tran-assign-stock/tran-assign-stock.component.html ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">Stock Transfer</span>\r\n        <p></p>\r\n        <span>------------------------------------------</span>\r\n        <p></p>\r\n        <div>\r\n                <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n                        <label>\r\n                                User Type\r\n                        </label>\r\n                        <p></p>\r\n                        <select id=\"userType\" name=\"userType\" class=\"SubHeaderInput\" [(ngModel)]=\"userType.id\" (change)=\"onUserTypeChange($event)\">                                        \r\n                                <option *ngFor=\"let ut of userTypes;let i = index\" [value]=\"userTypes[i].id\">\r\n                                        {{userTypes[i].name}}\r\n                                </option>\r\n\r\n                        </select>\r\n                        <p></p>\r\n\r\n                </div>\r\n                <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n                        <label>\r\n                                Users :\r\n                        </label>\r\n                        <p></p>\r\n                        <select id=\"users\" name=\"users\" class=\"SubHeaderInput\" [(ngModel)]=\"stockTransUserId\" (change)=\"onUserChange($event)\" >\r\n                                 <option value=\"0\" selected=\"selected\">Select\r\n                                <option *ngFor=\"let user of users | filterByUserRoleTypePipe : userType.id : filterData\" [value]=\"user.id\">\r\n                                        {{user.name}}\r\n                                </option>\r\n                        </select>\r\n                        <p></p>\r\n                </div>\r\n        </div>\r\n\r\n        <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n\r\n\r\n        </div>\r\n        <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n                <button (click)=\"loadData()\">Load Data</button>\r\n\r\n        </div>\r\n        <div>\r\n                <span class=\"Header\">Stock</span>\r\n                <p></p>\r\n                <span>------------------------------------------</span>\r\n        </div>\r\n        <div style=\"padding-top: 20px;\">\r\n                <span style=\"font-size:15px;color:rgba(18, 108, 218, 0.829);\">\r\n                        Search\r\n                </span>\r\n                <p></p>\r\n                <span id=\"filterSpanBox\">\r\n                        Name :\r\n                        <input [(ngModel)]=\"filterCriteria.deviceName\" placeholder=\"\" style=\"width: 150px;\"\r\n                                id=\"filterInputBox\">\r\n                </span>\r\n                <span id=\"filterSpanBox\">\r\n                        Id :\r\n                        <input [(ngModel)]=\"filterCriteria.deviceId\" placeholder=\"\" style=\"width: 150px;\"\r\n                                id=\"filterInputBox\">\r\n                </span>\r\n                <span id=\"filterSpanBox\">\r\n                        SimNo :\r\n                        <input [(ngModel)]=\"filterCriteria.simNo\" placeholder=\"\" style=\"width: 75px;\"\r\n                                id=\"filterInputBox\">\r\n                </span>\r\n                <span id=\"filterSpanBox\">\r\n                        Activation State :\r\n                        <input [(ngModel)]=\"filterCriteria.activatinonState\" placeholder=\"\" style=\"width: 75px;\"\r\n                                id=\"filterInputBox\">\r\n                </span>\r\n                <span id=\"filterSpanBox\">\r\n                        Sim Provider :\r\n                        <input [(ngModel)]=\"filterCriteria.simProvider\" placeholder=\"\" style=\"width: 75px;\"\r\n                                id=\"filterInputBox\">\r\n                </span>\r\n\r\n\r\n        </div>\r\n        <p></p>\r\n        <div style=\"padding-top: 20px;\">\r\n                <table>\r\n                        <thead>\r\n                                <tr>\r\n                                        <th style=\"width: 100px;\">Device Name</th>\r\n                                        <th style=\"width: 100px;\">Device Id</th>\r\n                                        <th style=\"width: 100px;\">SimNo</th>\r\n                                        <th style=\"width: 100px;\">Mob Primar</th>\r\n                                        <th style=\"width: 150px;\">Belongs To</th>                                      \r\n                                        <th style=\"width: 150px;\">Sim Provider</th>\r\n                                        <th>Select All\r\n                                                <input type=\"checkbox\" id='stockSelectAll' (click)='selectAll($event)'> \r\n                                        </th>\r\n                                </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                                <tr *ngFor=\"let obj of stocks | filterObjArrayByMatchProperty : filterCriteria : '' \">\r\n                                        <td>{{obj.deviceName }}</td>\r\n                                        <td>{{obj.deviceId}}</td>\r\n                                        <td>{{obj.simNo}}</td>\r\n                                        <td>{{obj.mobNoPrimary}}</td>\r\n                                        <td>{{obj.belongsToName}}</td>                                        \r\n                                        <td>{{obj.simProvider}}</td>\r\n                                        <td style=\"text-align: right;\">\r\n                                                <input type=\"checkbox\" id='stockSelect' (click)='onSelect($event,obj)' [(checked)]=obj.stockSelect>\r\n                                        </td>\r\n                                </tr>\r\n                        </tbody>\r\n                </table>\r\n        </div>\r\n\r\n        <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n                <button (click)=\"transferData()\">Transfer</button>\r\n         </div>\r\n\r\n\r\n</div>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/about-compoment/about-compoment.component.html":
 /*!******************************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/about-compoment/about-compoment.component.html ***!
@@ -41,7 +63,7 @@ module.exports = "<p>This is the About</p>\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:left; color:rgb(255,255,255); background-color:rgb(56, 114, 240)  \">\r\n  <h3>\r\n    Welcome to  <b>{{ title }}</b>  \r\n   </h3>\r\n   <span style=\"float: right;padding-right: 100px;\">     \r\n    <a href=\"\" (click)=\"logOut()\" style=\"color: yellow; font-size: 14px; \" >Log Out</a>\r\n  </span>  \r\n   <span style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif\">\r\n    <span style=\"padding-right: 5px;\">\r\n      UserName :  {{LogInUser.email}}\r\n    </span>\r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Role :  {{LogInUser.roleName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n      CompanyName :  {{LogInUser.companyName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Name :  {{LogInUser.fname}} {{LogInUser.lname}}\r\n    </span>\r\n    \r\n      \r\n   </span>\r\n   \r\n    \r\n</div>\r\n<div>\r\n  <a [routerLink]=\"['/home']\">Home</a>\r\n  ||\r\n  <a [routerLink]=\"['/about']\">About</a>\r\n  ||\r\n  <a [routerLink]=\"['/SuperStockistList']\">Super Stockist</a>\r\n  ||\r\n  <a [routerLink]=\"['/distributorList']\">Drisbutor</a>\r\n  ||\r\n  <a [routerLink]=\"['/retailerList']\">Retailer</a>\r\n  ||\r\n  <a [routerLink]=\"['/BusinessAssociate']\">Business Associate</a>\r\n  ||\r\n  <a [routerLink]=\"['/Transaction']\">Transaction</a>\r\n</div>\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:left; color:rgb(255,255,255); background-color:rgb(56, 114, 240)  \">\r\n  <h3>\r\n    Welcome to  <b>{{ title }}</b>  \r\n   </h3>\r\n   <span style=\"float: right;padding-right: 100px;\">     \r\n    <a href=\"\" (click)=\"logOut()\" style=\"color: yellow; font-size: 14px; \" >Log Out</a>\r\n  </span>  \r\n   <span style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif\">\r\n    <span style=\"padding-right: 5px;\">\r\n      UserName :  {{LogInUser.email}}\r\n    </span>\r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Role :  {{LogInUser.roleName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n      CompanyName :  {{LogInUser.companyName}}\r\n    </span> \r\n    || \r\n    <span style=\"padding-right: 5px; padding-left: 5px;\">\r\n       Name :  {{LogInUser.fname}} {{LogInUser.lname}}\r\n    </span>\r\n    \r\n      \r\n   </span>\r\n   \r\n    \r\n</div>\r\n<div>\r\n  <a [routerLink]=\"['/home']\">Home</a>\r\n  ||\r\n  <a [routerLink]=\"['/about']\">About</a>\r\n  ||\r\n  <a [routerLink]=\"['/SuperStockistList']\">Super Stockist</a>\r\n  ||\r\n  <a [routerLink]=\"['/distributorList']\">Drisbutor</a>\r\n  ||\r\n  <a [routerLink]=\"['/retailerList']\">Retailer</a>\r\n  ||\r\n  <a [routerLink]=\"['/BusinessAssociate']\">Business Associate</a>\r\n  ||\r\n  <a [routerLink]=\"['/Stock']\">Stock</a>\r\n  ||\r\n  <a [routerLink]=\"['/Transaction']\">Transaction</a>\r\n\r\n  \r\n</div>\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -177,14 +199,441 @@ module.exports = "<div class=\"container\">\r\n    <span class=\"Header\">Super 
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/tran-assign-stock/tran-assign-stock.component.html":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/tran-assign-stock/tran-assign-stock.component.html ***!
-  \**********************************************************************************************/
+/***/ "./src/app/Component/stock-list/stock-list.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/Component/stock-list/stock-list.component.css ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">Stock Transfer</span>\r\n        <p></p>\r\n        <span>------------------------------------------</span>\r\n        <p></p>\r\n        <div style=\"float: left; padding-top:20px;width: 50%;\">\r\n                <label>Tranfer Type</label>  \r\n                <p></p>\r\n                <select id=\"transferType\" name=\"transferType\" style=\"width: 300px\">\r\n                        <option value=\"0\">Select</option>\r\n                        <option value=\"1\">My Channel</option>\r\n                        <option value=\"2\">Others</option>\r\n                </select> \r\n                <p></p>\r\n                <label>PO Number</label>  \r\n                <p></p>\r\n                <input type=\"text\" style=\"width: 200px\">\r\n                <input type=\"checkbox\"> Without PO  \r\n                <p></p>\r\n                 <label>\r\n                        User Type     \r\n                </label> \r\n                <p></p>\r\n                <select id=\"userType\" name=\"userType\" style=\"width: 300px\">\r\n                        <option value=\"0\">Select</option>\r\n                        <option value=\"1\">Retailer</option>\r\n                        <option value=\"2\">DSA</option>\r\n                        <option value=\"3\">BA</option>\r\n                        <option value=\"4\">LT Point</option>\r\n                        \r\n                </select> \r\n                <p></p>\r\n                <label>\r\n                        Users  :     \r\n                    </label>\r\n                    <p></p>\r\n                        <select id=\"usres\" name=\"usres\" style=\"width: 300px\">\r\n                        <option value=\"0\">Select</option>\r\n                        <option value=\"1\">Andy</option>\r\n                        <option value=\"2\">Jeckob</option>\r\n                        <option value=\"3\">Kristin</option>\r\n                        <option value=\"4\">Robert</option>\r\n                        </select> \r\n                    <p></p>\r\n                    <label>\r\n                        Product Type     \r\n                   </label>\r\n                   <p></p>\r\n                   <select id=\"productType\" name=\"productType\" style=\"width: 300px\">\r\n                        <option value=\"0\">Select</option>\r\n                        <option value=\"1\">BOX</option>\r\n                        <option value=\"2\">Device</option>\r\n                        <option value=\"3\">Accessories</option>\r\n                  </select> \r\n                   <p></p>\r\n                   <label>\r\n                        Product :     \r\n                  </label>\r\n                   <p></p>\r\n                   <select id=\"product\" name=\"product\" style=\"width: 300px\">\r\n                        <option value=\"0\">Select</option>\r\n                        <option value=\"1\">A</option>\r\n                        <option value=\"2\">B</option>\r\n                        <option value=\"2\">C</option>\r\n                  </select> \r\n                   <p></p>\r\n                   <label>\r\n                        Sale Type :     \r\n                 </label>\r\n                 <p></p>\r\n                 <input type=\"checkbox\"> Non FOC\r\n                 <input type=\"checkbox\"> FOC\r\n                 <p></p>\r\n        </div>\r\n    \r\n    \r\n    <div>\r\n        <div class=\"containerbodyitemleft\">\r\n                <label>\r\n                     \r\n                </label>\r\n        </div>\r\n        <div class=\"containerbodyitemright\">\r\n                         \r\n        </div>   \r\n    </div>\r\n    <br>    \r\n    <div>\r\n        <div class=\"containerbodyitemleft\">\r\n                          \r\n        </div>\r\n        <div class=\"containerbodyitemright\">\r\n                \r\n        </div>        \r\n    </div>\r\n    <br>\r\n    <div>\r\n        <div class=\"containerbodyitemleft\">\r\n           \r\n        </div>\r\n        <div class=\"containerbodyitemright\">\r\n                \r\n        </div>\r\n        \r\n    </div>\r\n\r\n    <br>\r\n    <div>\r\n        <div class=\"containerbodyitemleft\">\r\n               \r\n        </div>\r\n        <div class=\"containerbodyitemright\">\r\n                \r\n        </div>        \r\n    </div>\r\n\r\n    <br>\r\n    <div>\r\n            <div class=\"containerbodyitemleft\">\r\n                   \r\n            </div>\r\n            <div class=\"containerbodyitemright\">\r\n                   \r\n            </div> \r\n        \r\n    </div>\r\n\r\n    <br>\r\n    <div>\r\n            <div class=\"containerbodyitemleft\">\r\n                     \r\n            </div>\r\n            <div class=\"containerbodyitemright\">\r\n                   \r\n            </div> \r\n       \r\n    </div>\r\n\r\n    <br>\r\n    <div>\r\n        <div style=\"width: 15%; float: left; \">\r\n                <label style=\"font-weight: bold ; background-color:rgb(27, 166, 247);\r\n                color: whitesmoke;\">All Serials Numbers</label>                    \r\n               <textarea></textarea>  \r\n        </div>\r\n        \r\n        <div style=\"width: 20%; float: left;\">\r\n                <label style=\"font-weight: bold ; background-color:rgb(27, 166, 247);\r\n                color: whitesmoke;\">Selected Serials Numbers</label>           \r\n                <textarea></textarea>      \r\n        </div>\r\n        <div style=\"width: 75%; float: left;\">\r\n           \r\n                </div>\r\n          \r\n    </div>\r\n   \r\n    <div>\r\n        <input  type=\"button\" name=\"Add To Chart\" value=\"Add To Chart\" style=\"font-weight: bold ; background-color:rgb(27, 166, 247);\r\n        color: whitesmoke;\">\r\n    </div>\r\n   \r\n</div>\r\n"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudC9zdG9jay1saXN0L3N0b2NrLWxpc3QuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/Component/stock-list/stock-list.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/Component/stock-list/stock-list.component.ts ***!
+  \**************************************************************/
+/*! exports provided: StockListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StockListComponent", function() { return StockListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_stock_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../service/stock.service */ "./src/app/service/stock.service.ts");
+
+
+
+
+
+var StockListComponent = /** @class */ (function () {
+    function StockListComponent(stockService, AuthService, router) {
+        this.stockService = stockService;
+        this.AuthService = AuthService;
+        this.router = router;
+        this.ChkForAuth();
+        this.filterCriteria = new filterCriteria();
+    }
+    StockListComponent.prototype.ngOnInit = function () {
+    };
+    StockListComponent.prototype.ChkForAuth = function () {
+        this.roleId = this.AuthService.getRoleId();
+        /*if ((this.roleId != "1") && (this.roleId != "2")  ) {
+          alert('You are not authorized to access the resurce');
+          this.router.navigate(['../home']);
+        }*/
+    };
+    StockListComponent.prototype.loadData = function () {
+        this.filterCriteria = new filterCriteria();
+        if (this.roleId == "1")
+            this.getbyParentCompnayAllData();
+        if (this.roleId == "2")
+            this.getbySuperStokist();
+        if (this.roleId == "3")
+            this.getbyDistributor();
+        if (this.roleId == "4")
+            this.getbyRatailer();
+        if (this.roleId == "5")
+            this.getbyBusinessAssociate();
+    };
+    StockListComponent.prototype.sendActivationReqest = function (obj) {
+        var _this = this;
+        var stocks = [];
+        var stock = obj;
+        stock.activationRequestedBy = this.AuthService.getId();
+        stocks.push(obj);
+        this.stockService.sendActivationReq(stocks).add(function () {
+            _this.loadData();
+        });
+    };
+    StockListComponent.prototype.doActivation = function (obj) {
+        var _this = this;
+        var stocks = [];
+        var stock = obj;
+        stock.activationRequestedBy = this.AuthService.getId();
+        stocks.push(obj);
+        this.stockService.doActivation(stocks).add(function () {
+            _this.loadData();
+        });
+    };
+    StockListComponent.prototype.getbyParentCompnayAllData = function () {
+        var _this = this;
+        var parentCompanyId = this.AuthService.getParentCompanyId();
+        this.stockService.getbyParentCompnayAllData(parentCompanyId)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    StockListComponent.prototype.getbySuperStokist = function () {
+        var _this = this;
+        var id = this.AuthService.getId();
+        this.stockService.getbySuperStokist(id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    StockListComponent.prototype.getbyDistributor = function () {
+        var _this = this;
+        var id = this.AuthService.getId();
+        this.stockService.getbyDistributor(id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    StockListComponent.prototype.getbyRatailer = function () {
+        var _this = this;
+        var id = this.AuthService.getId();
+        this.stockService.getbyRetailer(id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    StockListComponent.prototype.getbyBusinessAssociate = function () {
+        var _this = this;
+        var id = this.AuthService.getId();
+        this.stockService.getbyBusinessAssociate(id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    StockListComponent.prototype.dataTransfornation = function () {
+        var _this = this;
+        return function () {
+            _this.stocks.forEach(function (e) {
+                if (e.activatinonState == '0') {
+                    e.activatinonState = 'Not Active';
+                }
+                if (e.activatinonState == '1') {
+                    e.activatinonState = 'Active';
+                }
+                if (e.activatinonState == '2') {
+                    e.activatinonState = 'In Progress';
+                }
+            });
+        };
+    };
+    StockListComponent.ctorParameters = function () { return [
+        { type: _service_stock_service__WEBPACK_IMPORTED_MODULE_4__["StockService"] },
+        { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    ]; };
+    StockListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-stock-list',
+            template: __webpack_require__(/*! raw-loader!./stock-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/Component/stock-list/stock-list.component.html"),
+            styles: [__webpack_require__(/*! ./stock-list.component.css */ "./src/app/Component/stock-list/stock-list.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_stock_service__WEBPACK_IMPORTED_MODULE_4__["StockService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], StockListComponent);
+    return StockListComponent;
+}());
+
+var filterCriteria = /** @class */ (function () {
+    //deviceActivationStateTypePipe :DeviceActivationStateTypePipe;
+    function filterCriteria() {
+        //this.deviceActivationStateTypePipe= new DeviceActivationStateTypePipe();
+    }
+    return filterCriteria;
+}());
+
+
+/***/ }),
+
+/***/ "./src/app/Component/tran-assign-stock/tran-assign-stock.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/Component/tran-assign-stock/tran-assign-stock.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudC90cmFuLWFzc2lnbi1zdG9jay90cmFuLWFzc2lnbi1zdG9jay5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/Component/tran-assign-stock/tran-assign-stock.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/Component/tran-assign-stock/tran-assign-stock.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: TranAssignStockComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TranAssignStockComponent", function() { return TranAssignStockComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_stock_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../service/stock.service */ "./src/app/service/stock.service.ts");
+/* harmony import */ var _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../service/super-stockist.service */ "./src/app/service/super-stockist.service.ts");
+/* harmony import */ var _service_distributor_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../service/distributor.service */ "./src/app/service/distributor.service.ts");
+/* harmony import */ var _service_retailer_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../service/retailer.service */ "./src/app/service/retailer.service.ts");
+/* harmony import */ var _service_business_associate_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../service/business-associate.service */ "./src/app/service/business-associate.service.ts");
+/* harmony import */ var _service_parent_company_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../service/parent-company.service */ "./src/app/service/parent-company.service.ts");
+/* harmony import */ var _model_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../model/user */ "./src/app/model/user.ts");
+
+
+
+
+
+
+
+
+
+
+
+var TranAssignStockComponent = /** @class */ (function () {
+    function TranAssignStockComponent(stockService, parentCompanyService, superStockistService, distributorService, retailerService, BusinessAssociateService, AuthService, router) {
+        this.stockService = stockService;
+        this.parentCompanyService = parentCompanyService;
+        this.superStockistService = superStockistService;
+        this.distributorService = distributorService;
+        this.retailerService = retailerService;
+        this.BusinessAssociateService = BusinessAssociateService;
+        this.AuthService = AuthService;
+        this.router = router;
+        this.filterData = false;
+        this.ChkForAuth();
+        this.filterCriteria = new filterCriteria();
+    }
+    TranAssignStockComponent.prototype.ngOnInit = function () {
+        this.userTypes = [];
+        if (this.roleId == "1") {
+            this.userTypes.push({ 'name': 'Super Stokist', 'id': "2" });
+            this.userTypes.push({ 'name': 'Distributor', 'id': "3" });
+            this.userTypes.push({ 'name': 'Retailer', 'id': "4" });
+            this.userTypes.push({ 'name': 'Business Associate', 'id': "5" });
+            this.userType = { 'name': 'Super Stokist', 'id': "2" };
+            this.filterData = true;
+        }
+        if (this.roleId == "2") {
+            this.userTypes.push({ 'name': 'Distributor', 'id': "3" });
+            this.userType = this.userTypes[0];
+            this.filterData = false;
+        }
+        if (this.roleId == "3") {
+            this.userTypes.push({ 'name': 'Retailer', 'id': "4" });
+            this.userTypes.push({ 'name': 'Business Associate', 'id': "5" });
+            this.userType = this.userTypes[0];
+            this.filterData = false;
+        }
+        this.loginUserName = this.AuthService.getEmail();
+        this.users = [];
+    };
+    TranAssignStockComponent.prototype.ChkForAuth = function () {
+        this.roleId = this.AuthService.getRoleId();
+        if (this.roleId == "1") {
+            this.id = this.AuthService.getParentCompanyId();
+        }
+        else {
+            this.id = this.AuthService.getId();
+        }
+        this.id = this.AuthService.getId();
+        if ((this.roleId != "1") && (this.roleId != "2") && (this.roleId != "3")) {
+            alert('You are not authorized to access the resurce');
+            this.router.navigate(['../home']);
+        }
+    };
+    TranAssignStockComponent.prototype.loadData = function () {
+        this.filterCriteria = new filterCriteria();
+        if (this.roleId == "1") {
+            this.getbyParentCompnay();
+            //this.userType ={'name':'Super Stokist' , 'id' : "2"};
+        }
+        if (this.roleId == "2") {
+            this.getbySuperStokist();
+            this.userType = { 'name': 'Distributor', 'id': "3" };
+        }
+        if (this.roleId == "3") {
+            this.getbyDistributor();
+            //this.userType ={'name':'Retailer' , 'id' : "3"};
+        }
+        this.loadUser();
+    };
+    TranAssignStockComponent.prototype.getbyParentCompnay = function () {
+        var _this = this;
+        var parentCompanyId = this.AuthService.getParentCompanyId();
+        this.stockService.getbyParentCompnay(parentCompanyId)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    TranAssignStockComponent.prototype.getbySuperStokist = function () {
+        var _this = this;
+        this.stockService.getbySuperStokist(this.id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    TranAssignStockComponent.prototype.getbyDistributor = function () {
+        var _this = this;
+        var id = this.AuthService.getId();
+        this.stockService.getbyDistributor(id)
+            .subscribe(function (data) {
+            _this.stocks = data;
+            (function (err) { console.log(err); });
+        }).add(this.dataTransfornation());
+    };
+    TranAssignStockComponent.prototype.dataTransfornation = function () {
+        var _this = this;
+        return function () {
+            _this.stocks.forEach(function (e) {
+                e.stockSelect = false;
+                if (e.activatinonState = '0') {
+                    e.activatinonState = 'Active';
+                }
+                else {
+                    e.activatinonState = 'Not Active';
+                }
+            });
+        };
+    };
+    TranAssignStockComponent.prototype.loadUser = function () {
+        var _this = this;
+        this.users = [];
+        if (this.roleId == "1") {
+            var id = this.AuthService.getParentCompanyId();
+            this.parentCompanyService.getCompanyUser(id).subscribe(function (data) {
+                _this.users = data;
+            }).add(function () {
+                if (_this.users.length > 0) {
+                    //this.stockTransUserId=this.users[0].id; 
+                    _this.stockTransUserId = "0";
+                }
+            });
+        }
+        if (this.roleId == "2") {
+            var id = this.AuthService.getId();
+            this.distributorService.getDataAll(id).subscribe(function (data) {
+                var distributors = data;
+                distributors.forEach(function (element) {
+                    var obj = new _model_user__WEBPACK_IMPORTED_MODULE_10__["user"]();
+                    obj.id = element.id;
+                    obj.name = element.fname + element.lname;
+                    obj.roleId = element.roleId;
+                    _this.users.push(obj);
+                });
+            }).add(function () {
+                //this.stockTransUserId=this.users[0].id; 
+                _this.stockTransUserId = "0";
+            });
+        }
+        if (this.roleId == "3") {
+            var id = this.AuthService.getId();
+            if (this.userType["id"] == "4") {
+                this.retailerService.getDataAll(id).subscribe(function (data) {
+                    var retailers = data;
+                    retailers.forEach(function (element) {
+                        var obj = new _model_user__WEBPACK_IMPORTED_MODULE_10__["user"]();
+                        obj.id = element.id;
+                        obj.name = element.fname + element.lname;
+                        obj.roleId = element.roleId;
+                        _this.users.push(obj);
+                    });
+                }).add(function () {
+                    _this.stockTransUserId = "0";
+                });
+            }
+            if (this.userType["id"] == "5") {
+                this.users = [];
+            }
+        }
+    };
+    TranAssignStockComponent.prototype.selectAll = function (event) {
+        this.stocks.forEach(function (element) {
+            element.stockSelect = event.target.checked;
+        });
+    };
+    TranAssignStockComponent.prototype.onSelect = function (event, obj) {
+        obj.stockSelect = event.target.checked;
+    };
+    TranAssignStockComponent.prototype.transferData = function () {
+        var _this = this;
+        if (this.stockTransUserId == "0") {
+            alert('Please select a user.');
+            return;
+        }
+        var stocksTransfer = [];
+        this.stocks.forEach(function (element) {
+            if (element.stockSelect) {
+                stocksTransfer.push(element);
+            }
+        });
+        stocksTransfer.forEach(function (element) {
+            element.updatedBy = _this.loginUserName;
+            element.belongsToId = _this.stockTransUserId;
+            element.belongsTo = _this.userType['id'];
+        });
+        this.stockService.stockTransfer(stocksTransfer).add(function () {
+            _this.loadData();
+        });
+    };
+    TranAssignStockComponent.prototype.onUserTypeChange = function (args) {
+        console.log(args.target.value);
+        this.userType['id'] = args.target.value;
+    };
+    TranAssignStockComponent.prototype.onUserChange = function (args) {
+        console.log(this.stockTransUserId);
+    };
+    TranAssignStockComponent.ctorParameters = function () { return [
+        { type: _service_stock_service__WEBPACK_IMPORTED_MODULE_4__["StockService"] },
+        { type: _service_parent_company_service__WEBPACK_IMPORTED_MODULE_9__["ParentCompanyService"] },
+        { type: _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_5__["SuperStockistService"] },
+        { type: _service_distributor_service__WEBPACK_IMPORTED_MODULE_6__["DistributorService"] },
+        { type: _service_retailer_service__WEBPACK_IMPORTED_MODULE_7__["RetailerService"] },
+        { type: _service_business_associate_service__WEBPACK_IMPORTED_MODULE_8__["BusinessAssociateService"] },
+        { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    ]; };
+    TranAssignStockComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-tran-assign-stock',
+            template: __webpack_require__(/*! raw-loader!./tran-assign-stock.component.html */ "./node_modules/raw-loader/index.js!./src/app/Component/tran-assign-stock/tran-assign-stock.component.html"),
+            styles: [__webpack_require__(/*! ./tran-assign-stock.component.css */ "./src/app/Component/tran-assign-stock/tran-assign-stock.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_stock_service__WEBPACK_IMPORTED_MODULE_4__["StockService"], _service_parent_company_service__WEBPACK_IMPORTED_MODULE_9__["ParentCompanyService"], _service_super_stockist_service__WEBPACK_IMPORTED_MODULE_5__["SuperStockistService"], _service_distributor_service__WEBPACK_IMPORTED_MODULE_6__["DistributorService"],
+            _service_retailer_service__WEBPACK_IMPORTED_MODULE_7__["RetailerService"], _service_business_associate_service__WEBPACK_IMPORTED_MODULE_8__["BusinessAssociateService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], TranAssignStockComponent);
+    return TranAssignStockComponent;
+}());
+
+var filterCriteria = /** @class */ (function () {
+    function filterCriteria() {
+    }
+    return filterCriteria;
+}());
+
 
 /***/ }),
 
@@ -195,7 +644,7 @@ module.exports = "<div class=\"container\">\r\n        <span class=\"Header\">St
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0LWNvbXBvbWVudC9hYm91dC1jb21wb21lbnQuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -248,7 +697,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home-compoment/home-compoment.component */ "./src/app/home-compoment/home-compoment.component.ts");
 /* harmony import */ var _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./about-compoment/about-compoment.component */ "./src/app/about-compoment/about-compoment.component.ts");
-/* harmony import */ var _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tran-assign-stock/tran-assign-stock.component */ "./src/app/tran-assign-stock/tran-assign-stock.component.ts");
+/* harmony import */ var _Component_tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Component/tran-assign-stock/tran-assign-stock.component */ "./src/app/Component/tran-assign-stock/tran-assign-stock.component.ts");
 /* harmony import */ var _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./super-stockist-list/super-stockist-list.component */ "./src/app/super-stockist-list/super-stockist-list.component.ts");
 /* harmony import */ var _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./super-stockist/super-stockist.component */ "./src/app/super-stockist/super-stockist.component.ts");
 /* harmony import */ var _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./super-stockist-edit/super-stockist-edit.component */ "./src/app/super-stockist-edit/super-stockist-edit.component.ts");
@@ -259,8 +708,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./retailer/retailer.component */ "./src/app/retailer/retailer.component.ts");
 /* harmony import */ var _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./retailer-edit/retailer-edit.component */ "./src/app/retailer-edit/retailer-edit.component.ts");
 /* harmony import */ var _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./business-associate/business-associate.component */ "./src/app/business-associate/business-associate.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
+/* harmony import */ var _Component_stock_list_stock_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Component/stock-list/stock-list.component */ "./src/app/Component/stock-list/stock-list.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
+
 
 
 
@@ -281,11 +732,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'login' },
-    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"] },
+    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"] },
     { path: 'home', component: _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_3__["HomeCompomentComponent"] },
     { path: 'about', component: _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_4__["AboutCompomentComponent"] },
-    { path: 'Transaction', component: _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__["TranAssignStockComponent"] },
-    { path: 'SuperStockistList', component: _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_6__["SuperStockistListComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_17__["AuthGuard"]] },
+    { path: 'Transaction', component: _Component_tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_5__["TranAssignStockComponent"] },
+    { path: 'SuperStockistList', component: _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_6__["SuperStockistListComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"]] },
     { path: 'superStockistAdd', component: _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_7__["SuperStockistComponent"] },
     { path: 'superStockistEdit/:id', component: _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_8__["SuperStockistEditComponent"] },
     { path: 'distributorList', component: _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_9__["DistributorListComponent"] },
@@ -295,6 +746,7 @@ var routes = [
     { path: 'retailerAdd', component: _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"] },
     { path: 'retailerEdit/:id', component: _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_14__["RetailerEditComponent"] },
     { path: 'BusinessAssociate', component: _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_15__["BusinessAssociateComponent"] },
+    { path: 'Stock', component: _Component_stock_list_stock_list_component__WEBPACK_IMPORTED_MODULE_16__["StockListComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -319,7 +771,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -350,13 +802,13 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(appStorageService, AuthService) {
         this.appStorageService = appStorageService;
         this.AuthService = AuthService;
-        this.title = 'ZETTRACK INDIA';
+        /*title = 'ZETTRACK INDIA';*/
+        this.title = '......';
         this.data = [];
         this.appStorageService.setUserNameInLocal('Admin');
         this.appStorageService.setParentCompanyIdInLocal('05008166-6159-493D-15EE-08D712D81DBC');
     }
     AppComponent.prototype.ngOnInit = function () {
-        console.log('init called....');
         this.LogInUser = new _model_LogInUser__WEBPACK_IMPORTED_MODULE_4__["LogInUser"]();
         this.LogInUser.companyName = this.AuthService.getCompanyName();
         this.LogInUser.email = this.AuthService.getEmail();
@@ -409,7 +861,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home-compoment/home-compoment.component */ "./src/app/home-compoment/home-compoment.component.ts");
 /* harmony import */ var _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about-compoment/about-compoment.component */ "./src/app/about-compoment/about-compoment.component.ts");
-/* harmony import */ var _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./tran-assign-stock/tran-assign-stock.component */ "./src/app/tran-assign-stock/tran-assign-stock.component.ts");
+/* harmony import */ var _Component_tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Component/tran-assign-stock/tran-assign-stock.component */ "./src/app/Component/tran-assign-stock/tran-assign-stock.component.ts");
 /* harmony import */ var _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./super-stockist/super-stockist.component */ "./src/app/super-stockist/super-stockist.component.ts");
 /* harmony import */ var _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./distributor/distributor.component */ "./src/app/distributor/distributor.component.ts");
 /* harmony import */ var _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./retailer/retailer.component */ "./src/app/retailer/retailer.component.ts");
@@ -424,6 +876,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./retailer-list/retailer-list.component */ "./src/app/retailer-list/retailer-list.component.ts");
 /* harmony import */ var _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./distributor-list/distributor-list.component */ "./src/app/distributor-list/distributor-list.component.ts");
 /* harmony import */ var _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./filter/filter-obj-array-by-match-property.pipe */ "./src/app/filter/filter-obj-array-by-match-property.pipe.ts");
+/* harmony import */ var _Component_stock_list_stock_list_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Component/stock-list/stock-list.component */ "./src/app/Component/stock-list/stock-list.component.ts");
+/* harmony import */ var _filter_device_activation_state_type_pipe__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./filter/device-activation-state-type.pipe */ "./src/app/filter/device-activation-state-type.pipe.ts");
+/* harmony import */ var _filter_filter_by_user_role_type_pipe_pipe__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./filter/filter-by-user-role-type-pipe.pipe */ "./src/app/filter/filter-by-user-role-type-pipe.pipe.ts");
+
+
+
 
 
 
@@ -458,7 +916,7 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
                 _home_compoment_home_compoment_component__WEBPACK_IMPORTED_MODULE_8__["HomeCompomentComponent"],
                 _about_compoment_about_compoment_component__WEBPACK_IMPORTED_MODULE_9__["AboutCompomentComponent"],
-                _tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__["TranAssignStockComponent"],
+                _Component_tran_assign_stock_tran_assign_stock_component__WEBPACK_IMPORTED_MODULE_10__["TranAssignStockComponent"],
                 _super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"],
                 _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"],
                 _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"],
@@ -472,6 +930,9 @@ var AppModule = /** @class */ (function () {
                 _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"],
                 _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"],
                 _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__["FilterObjArrayByMatchPropertyPipe"],
+                _Component_stock_list_stock_list_component__WEBPACK_IMPORTED_MODULE_25__["StockListComponent"],
+                _filter_device_activation_state_type_pipe__WEBPACK_IMPORTED_MODULE_26__["DeviceActivationStateTypePipe"],
+                _filter_filter_by_user_role_type_pipe_pipe__WEBPACK_IMPORTED_MODULE_27__["FilterByUserRoleTypePipePipe"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -483,7 +944,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [_model_app_storage__WEBPACK_IMPORTED_MODULE_17__["AppStorage"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
-            exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"], _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"], _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"], _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"], _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"], _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"], _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__["FilterObjArrayByMatchPropertyPipe"]]
+            exports: [_super_stockist_super_stockist_component__WEBPACK_IMPORTED_MODULE_11__["SuperStockistComponent"], _distributor_distributor_component__WEBPACK_IMPORTED_MODULE_12__["DistributorComponent"], _retailer_retailer_component__WEBPACK_IMPORTED_MODULE_13__["RetailerComponent"], _business_associate_business_associate_component__WEBPACK_IMPORTED_MODULE_14__["BusinessAssociateComponent"], _filter_filter_by_match_text_pipe__WEBPACK_IMPORTED_MODULE_15__["FilterByMatchTextPipe"], _super_stockist_list_super_stockist_list_component__WEBPACK_IMPORTED_MODULE_16__["SuperStockistListComponent"], _super_stockist_edit_super_stockist_edit_component__WEBPACK_IMPORTED_MODULE_18__["SuperStockistEditComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"], _distributor_edit_distributor_edit_component__WEBPACK_IMPORTED_MODULE_20__["DistributorEditComponent"], _retailer_edit_retailer_edit_component__WEBPACK_IMPORTED_MODULE_21__["RetailerEditComponent"], _retailer_list_retailer_list_component__WEBPACK_IMPORTED_MODULE_22__["RetailerListComponent"], _distributor_list_distributor_list_component__WEBPACK_IMPORTED_MODULE_23__["DistributorListComponent"], _filter_filter_obj_array_by_match_property_pipe__WEBPACK_IMPORTED_MODULE_24__["FilterObjArrayByMatchPropertyPipe"], _Component_stock_list_stock_list_component__WEBPACK_IMPORTED_MODULE_25__["StockListComponent"], _filter_device_activation_state_type_pipe__WEBPACK_IMPORTED_MODULE_26__["DeviceActivationStateTypePipe"], _filter_filter_by_user_role_type_pipe_pipe__WEBPACK_IMPORTED_MODULE_27__["FilterByUserRoleTypePipePipe"]]
         })
     ], AppModule);
     return AppModule;
@@ -542,7 +1003,7 @@ var AuthGuard = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2J1c2luZXNzLWFzc29jaWF0ZS9idXNpbmVzcy1hc3NvY2lhdGUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -558,20 +1019,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessAssociateComponent", function() { return BusinessAssociateComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _service_business_associate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../service/business-associate.service */ "./src/app/service/business-associate.service.ts");
+/* harmony import */ var _model_BusinessAssociate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../model/BusinessAssociate */ "./src/app/model/BusinessAssociate.ts");
+/* harmony import */ var _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/BusinessContactInformation */ "./src/app/model/BusinessContactInformation.ts");
+/* harmony import */ var _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../model/PersonalContactInformation */ "./src/app/model/PersonalContactInformation.ts");
+/* harmony import */ var _service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var _service_state_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../service/state.service */ "./src/app/service/state.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+
+
 
 
 var BusinessAssociateComponent = /** @class */ (function () {
-    function BusinessAssociateComponent() {
+    function BusinessAssociateComponent(businessAssociateService, AuthService, stateService, router, route) {
+        var _this = this;
+        this.businessAssociateService = businessAssociateService;
+        this.AuthService = AuthService;
+        this.stateService = stateService;
+        this.router = router;
+        this.route = route;
+        this.ChkForAuth();
+        this.obj = new _model_BusinessAssociate__WEBPACK_IMPORTED_MODULE_3__["BusinessAssociate"]();
+        //this.obj.businessAddress= new BusinessAddress();
+        this.obj.businessContactInformation = new _model_BusinessContactInformation__WEBPACK_IMPORTED_MODULE_4__["BusinessContactInformation"]();
+        this.obj.personalContactInformation = new _model_PersonalContactInformation__WEBPACK_IMPORTED_MODULE_5__["PersonalContactInformation"]();
+        this.stateService.getStates().subscribe(function (data) {
+            _this.states = data;
+            //this.obj.businessAddress.state=this.states[0].Name;      
+            //this.getDistrict()
+        }, function (data) {
+            console.log('Error getting the state' + data);
+        });
     }
     BusinessAssociateComponent.prototype.ngOnInit = function () {
     };
+    BusinessAssociateComponent.prototype.ChkForAuth = function () {
+        alert('You are not authorized to access the resurce');
+        this.router.navigate(['../home']);
+        /*var roleId = this.AuthService.getRoleId();
+        if (roleId != "3") {
+          alert('You are not authorized to access the resurce');
+          this.router.navigate(['../home']);
+        }*/
+    };
+    BusinessAssociateComponent.ctorParameters = function () { return [
+        { type: _service_business_associate_service__WEBPACK_IMPORTED_MODULE_2__["BusinessAssociateService"] },
+        { type: _service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"] },
+        { type: _service_state_service__WEBPACK_IMPORTED_MODULE_7__["StateService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["ActivatedRoute"] }
+    ]; };
     BusinessAssociateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-business-associate',
             template: __webpack_require__(/*! raw-loader!./business-associate.component.html */ "./node_modules/raw-loader/index.js!./src/app/business-associate/business-associate.component.html"),
             styles: [__webpack_require__(/*! ./business-associate.component.css */ "./src/app/business-associate/business-associate.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_service_business_associate_service__WEBPACK_IMPORTED_MODULE_2__["BusinessAssociateService"], _service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], _service_state_service__WEBPACK_IMPORTED_MODULE_7__["StateService"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["ActivatedRoute"]])
     ], BusinessAssociateComponent);
     return BusinessAssociateComponent;
 }());
@@ -587,7 +1096,7 @@ var BusinessAssociateComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yLWVkaXQvZGlzdHJpYnV0b3ItZWRpdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -736,7 +1245,7 @@ var DistributorEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yLWxpc3QvZGlzdHJpYnV0b3ItbGlzdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -816,7 +1325,7 @@ var DistributorListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rpc3RyaWJ1dG9yL2Rpc3RyaWJ1dG9yLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -941,6 +1450,45 @@ var DistributorComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/filter/device-activation-state-type.pipe.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/filter/device-activation-state-type.pipe.ts ***!
+  \*************************************************************/
+/*! exports provided: DeviceActivationStateTypePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeviceActivationStateTypePipe", function() { return DeviceActivationStateTypePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DeviceActivationStateTypePipe = /** @class */ (function () {
+    function DeviceActivationStateTypePipe() {
+    }
+    DeviceActivationStateTypePipe.prototype.transform = function (value, retValue) {
+        retValue = value;
+        if (value == '0')
+            retValue = 'Not Active';
+        if (value == '1')
+            retValue = 'Active';
+        if (value == '2')
+            retValue = 'In Progress';
+        return retValue;
+    };
+    DeviceActivationStateTypePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'deviceActivationStateType'
+        })
+    ], DeviceActivationStateTypePipe);
+    return DeviceActivationStateTypePipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/filter/filter-by-match-text.pipe.ts":
 /*!*****************************************************!*\
   !*** ./src/app/filter/filter-by-match-text.pipe.ts ***!
@@ -979,6 +1527,44 @@ var FilterByMatchTextPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/filter/filter-by-user-role-type-pipe.pipe.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/filter/filter-by-user-role-type-pipe.pipe.ts ***!
+  \**************************************************************/
+/*! exports provided: FilterByUserRoleTypePipePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterByUserRoleTypePipePipe", function() { return FilterByUserRoleTypePipePipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FilterByUserRoleTypePipePipe = /** @class */ (function () {
+    function FilterByUserRoleTypePipePipe() {
+    }
+    FilterByUserRoleTypePipePipe.prototype.transform = function (users, userRoleType, fiterData) {
+        if (fiterData) {
+            var result = users.filter(function (u) { return u["roleId"].toString() == userRoleType; });
+            return result;
+        }
+        else {
+            return users;
+        }
+    };
+    FilterByUserRoleTypePipePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'filterByUserRoleTypePipe'
+        })
+    ], FilterByUserRoleTypePipePipe);
+    return FilterByUserRoleTypePipePipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/filter/filter-obj-array-by-match-property.pipe.ts":
 /*!*******************************************************************!*\
   !*** ./src/app/filter/filter-obj-array-by-match-property.pipe.ts ***!
@@ -1000,6 +1586,8 @@ var FilterObjArrayByMatchPropertyPipe = /** @class */ (function () {
     function FilterObjArrayByMatchPropertyPipe() {
     }
     FilterObjArrayByMatchPropertyPipe.prototype.transform = function (items, criteria, propname) {
+        //console.log(items);
+        //console.log(criteria);  
         var result = [];
         if (!items || !criteria) {
             return items;
@@ -1079,7 +1667,7 @@ var FilterObjArrayByMatchPropertyPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtY29tcG9tZW50L2hvbWUtY29tcG9tZW50LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1131,7 +1719,7 @@ var HomeCompomentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\r\n    width: 400px;\r\n    margin: 16px auto;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  .login-header,\r\n  .login p {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .login-triangle {\r\n    width: 0;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    border: 12px solid transparent;\r\n    border-bottom-color: rgb(15, 66, 107);\r\n  }\r\n  \r\n  .login-header {\r\n    background: rgb(12, 77, 129);\r\n    padding: 20px;\r\n    font-size: 1.4em;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    color: #fff;\r\n  }\r\n  \r\n  .login-container {\r\n    background: #ebebeb;\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login p {\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login input {\r\n    box-sizing: border-box;\r\n    display: block;\r\n    width: 100%;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    padding: 16px;\r\n    outline: 0;\r\n    font-family: inherit;\r\n    font-size: 0.95em;\r\n  }\r\n  \r\n  .login input[type=\"email\"],\r\n  .login input[type=\"password\"] {\r\n    background: #fff;\r\n    border-color: #bbb;\r\n    color: #555;\r\n  }\r\n  \r\n  .login input[type=\"email\"]:focus,\r\n  .login input[type=\"password\"]:focus {\r\n    border-color: #888;\r\n  }\r\n  \r\n  .login input[type=\"submit\"] {\r\n    background: rgb(1, 29, 51);\r\n    border-color: transparent;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:hover {\r\n    background: #17c;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:focus {\r\n    border-color: #05a;\r\n  }\r\n  \r\n  .has-error input[type=\"email\"],\r\n.has-error input[type=\"password\"] {\r\n    border-color: rgb(216, 12, 12);\r\n    color: rgb(230, 14, 14);\r\n}"
+module.exports = ".login {\r\n    width: 400px;\r\n    margin: 16px auto;\r\n    font-size: 16px;\r\n  }\r\n  \r\n  .login-header,\r\n  .login p {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n  }\r\n  \r\n  .login-triangle {\r\n    width: 0;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    border: 12px solid transparent;\r\n    border-bottom-color: rgb(15, 66, 107);\r\n  }\r\n  \r\n  .login-header {\r\n    background: rgb(12, 77, 129);\r\n    padding: 20px;\r\n    font-size: 1.4em;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    color: #fff;\r\n  }\r\n  \r\n  .login-container {\r\n    background: #ebebeb;\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login p {\r\n    padding: 12px;\r\n  }\r\n  \r\n  .login input {\r\n    box-sizing: border-box;\r\n    display: block;\r\n    width: 100%;\r\n    border-width: 1px;\r\n    border-style: solid;\r\n    padding: 16px;\r\n    outline: 0;\r\n    font-family: inherit;\r\n    font-size: 0.95em;\r\n  }\r\n  \r\n  .login input[type=\"email\"],\r\n  .login input[type=\"password\"] {\r\n    background: #fff;\r\n    border-color: #bbb;\r\n    color: #555;\r\n  }\r\n  \r\n  .login input[type=\"email\"]:focus,\r\n  .login input[type=\"password\"]:focus {\r\n    border-color: #888;\r\n  }\r\n  \r\n  .login input[type=\"submit\"] {\r\n    background: rgb(1, 29, 51);\r\n    border-color: transparent;\r\n    color: #fff;\r\n    cursor: pointer;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:hover {\r\n    background: #17c;\r\n  }\r\n  \r\n  .login input[type=\"submit\"]:focus {\r\n    border-color: #05a;\r\n  }\r\n  \r\n  .has-error input[type=\"email\"],\r\n.has-error input[type=\"password\"] {\r\n    border-color: rgb(216, 12, 12);\r\n    color: rgb(230, 14, 14);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7SUFDakIsZUFBZTtFQUNqQjs7RUFFQTs7SUFFRSxhQUFhO0lBQ2IsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsUUFBUTtJQUNSLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsOEJBQThCO0lBQzlCLHFDQUFxQztFQUN2Qzs7RUFFQTtJQUNFLDRCQUE0QjtJQUM1QixhQUFhO0lBQ2IsZ0JBQWdCO0lBQ2hCLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIseUJBQXlCO0lBQ3pCLFdBQVc7RUFDYjs7RUFFQTtJQUNFLG1CQUFtQjtJQUNuQixhQUFhO0VBQ2Y7O0VBRUE7SUFDRSxhQUFhO0VBQ2Y7O0VBRUE7SUFDRSxzQkFBc0I7SUFDdEIsY0FBYztJQUNkLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixVQUFVO0lBQ1Ysb0JBQW9CO0lBQ3BCLGlCQUFpQjtFQUNuQjs7RUFFQTs7SUFFRSxnQkFBZ0I7SUFDaEIsa0JBQWtCO0lBQ2xCLFdBQVc7RUFDYjs7RUFFQTs7SUFFRSxrQkFBa0I7RUFDcEI7O0VBRUE7SUFDRSwwQkFBMEI7SUFDMUIseUJBQXlCO0lBQ3pCLFdBQVc7SUFDWCxlQUFlO0VBQ2pCOztFQUVBO0lBQ0UsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0Usa0JBQWtCO0VBQ3BCOztFQUVEOztJQUVHLDhCQUE4QjtJQUM5Qix1QkFBdUI7QUFDM0IiLCJmaWxlIjoic3JjL2FwcC9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luIHtcclxuICAgIHdpZHRoOiA0MDBweDtcclxuICAgIG1hcmdpbjogMTZweCBhdXRvO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gIH1cclxuICBcclxuICAubG9naW4taGVhZGVyLFxyXG4gIC5sb2dpbiBwIHtcclxuICAgIG1hcmdpbi10b3A6IDA7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gIH1cclxuICBcclxuICAubG9naW4tdHJpYW5nbGUge1xyXG4gICAgd2lkdGg6IDA7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIGJvcmRlcjogMTJweCBzb2xpZCB0cmFuc3BhcmVudDtcclxuICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHJnYigxNSwgNjYsIDEwNyk7XHJcbiAgfVxyXG4gIFxyXG4gIC5sb2dpbi1oZWFkZXIge1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDEyLCA3NywgMTI5KTtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBmb250LXNpemU6IDEuNGVtO1xyXG4gICAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luLWNvbnRhaW5lciB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWJlYmViO1xyXG4gICAgcGFkZGluZzogMTJweDtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIHAge1xyXG4gICAgcGFkZGluZzogMTJweDtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0IHtcclxuICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXdpZHRoOiAxcHg7XHJcbiAgICBib3JkZXItc3R5bGU6IHNvbGlkO1xyXG4gICAgcGFkZGluZzogMTZweDtcclxuICAgIG91dGxpbmU6IDA7XHJcbiAgICBmb250LWZhbWlseTogaW5oZXJpdDtcclxuICAgIGZvbnQtc2l6ZTogMC45NWVtO1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdLFxyXG4gIC5sb2dpbiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgIGJvcmRlci1jb2xvcjogI2JiYjtcclxuICAgIGNvbG9yOiAjNTU1O1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cImVtYWlsXCJdOmZvY3VzLFxyXG4gIC5sb2dpbiBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl06Zm9jdXMge1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjODg4O1xyXG4gIH1cclxuICBcclxuICAubG9naW4gaW5wdXRbdHlwZT1cInN1Ym1pdFwiXSB7XHJcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMSwgMjksIDUxKTtcclxuICAgIGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0W3R5cGU9XCJzdWJtaXRcIl06aG92ZXIge1xyXG4gICAgYmFja2dyb3VuZDogIzE3YztcclxuICB9XHJcbiAgXHJcbiAgLmxvZ2luIGlucHV0W3R5cGU9XCJzdWJtaXRcIl06Zm9jdXMge1xyXG4gICAgYm9yZGVyLWNvbG9yOiAjMDVhO1xyXG4gIH1cclxuXHJcbiAuaGFzLWVycm9yIGlucHV0W3R5cGU9XCJlbWFpbFwiXSxcclxuLmhhcy1lcnJvciBpbnB1dFt0eXBlPVwicGFzc3dvcmRcIl0ge1xyXG4gICAgYm9yZGVyLWNvbG9yOiByZ2IoMjE2LCAxMiwgMTIpO1xyXG4gICAgY29sb3I6IHJnYigyMzAsIDE0LCAxNCk7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -1178,7 +1766,6 @@ var LoginComponent = /** @class */ (function () {
     });
     LoginComponent.prototype.login = function () {
         var _this = this;
-        console.log(this.loginForm.value);
         this.isSubmitted = true;
         if (this.loginForm.invalid) {
             return;
@@ -1191,11 +1778,11 @@ var LoginComponent = /** @class */ (function () {
                         _this.router.navigateByUrl('/home');
                     }
                     else {
-                        alert('LonIn Failed...!!!');
+                        alert('LogIn Failed...!!!');
                     }
                 }
                 else {
-                    alert('LonIn Failed...!!!');
+                    alert('LogIn Failed...!!!');
                 }
             },
             error: function (data) {
@@ -1311,6 +1898,52 @@ var BusinessAddress = /** @class */ (function () {
     });
     return BusinessAddress;
 }());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/BusinessAssociate.ts":
+/*!********************************************!*\
+  !*** ./src/app/model/BusinessAssociate.ts ***!
+  \********************************************/
+/*! exports provided: BusinessAssociate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessAssociate", function() { return BusinessAssociate; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user */ "./src/app/model/user.ts");
+
+
+var BusinessAssociate = /** @class */ (function (_super) {
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](BusinessAssociate, _super);
+    function BusinessAssociate() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Object.defineProperty(BusinessAssociate.prototype, "ID", {
+        get: function () {
+            return this.Id;
+        },
+        set: function (v) {
+            this.Id = v;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(BusinessAssociate.prototype, "distributorId", {
+        get: function () {
+            return this.DistributorId;
+        },
+        set: function (v) {
+            this.DistributorId = v;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return BusinessAssociate;
+}(_user__WEBPACK_IMPORTED_MODULE_1__["user"]));
 
 
 
@@ -1763,12 +2396,10 @@ var AppStorage = /** @class */ (function () {
         configurable: true
     });
     AppStorage.prototype.saveInLocal = function (key, val) {
-        console.log('recieved= key:' + key + 'value:' + val);
         this.storage.set(key, val);
         //this.data[key]= this.storage.get(key);
     };
     AppStorage.prototype.getFromLocal = function (key) {
-        console.log('recieved= key:' + key);
         return this.storage.get(key);
         //this.data[key]= this.storage.get(key);
         //console.log(this.data);
@@ -1798,6 +2429,9 @@ var AppStorage = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "user", function() { return user; });
 var user = /** @class */ (function () {
+    /**
+     *
+     */
     function user() {
     }
     Object.defineProperty(user.prototype, "fname", {
@@ -1884,7 +2518,7 @@ var user = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyLWVkaXQvcmV0YWlsZXItZWRpdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2030,7 +2664,7 @@ var RetailerEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyLWxpc3QvcmV0YWlsZXItbGlzdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2110,7 +2744,7 @@ var RetailerListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JldGFpbGVyL3JldGFpbGVyLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -2450,6 +3084,36 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/service/business-associate.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/service/business-associate.service.ts ***!
+  \*******************************************************/
+/*! exports provided: BusinessAssociateService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusinessAssociateService", function() { return BusinessAssociateService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var BusinessAssociateService = /** @class */ (function () {
+    function BusinessAssociateService() {
+    }
+    BusinessAssociateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], BusinessAssociateService);
+    return BusinessAssociateService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/service/distributor.service.ts":
 /*!************************************************!*\
   !*** ./src/app/service/distributor.service.ts ***!
@@ -2526,6 +3190,53 @@ var DistributorService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
     ], DistributorService);
     return DistributorService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/parent-company.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/service/parent-company.service.ts ***!
+  \***************************************************/
+/*! exports provided: ParentCompanyService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParentCompanyService", function() { return ParentCompanyService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-settings.service */ "./src/app/service/app-settings.service.ts");
+
+
+
+
+var ParentCompanyService = /** @class */ (function () {
+    function ParentCompanyService(myHttpclient, appSettingsService) {
+        var _this = this;
+        this.myHttpclient = myHttpclient;
+        this.appSettingsService = appSettingsService;
+        appSettingsService.getSettings().subscribe(function (data) { return _this.myAppSetting = data; });
+    }
+    ParentCompanyService.prototype.getCompanyUser = function (parentCompanyId) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/ParentCompany/' + parentCompanyId + '/1';
+        return this.myHttpclient.get(url);
+    };
+    ParentCompanyService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+        { type: _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"] }
+    ]; };
+    ParentCompanyService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
+    ], ParentCompanyService);
+    return ParentCompanyService;
 }());
 
 
@@ -2653,6 +3364,127 @@ var StateService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/service/stock.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/service/stock.service.ts ***!
+  \******************************************/
+/*! exports provided: StockService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StockService", function() { return StockService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../service/app-settings.service */ "./src/app/service/app-settings.service.ts");
+
+
+
+
+
+var StockService = /** @class */ (function () {
+    function StockService(myHttpclient, appSettingsService) {
+        var _this = this;
+        this.myHttpclient = myHttpclient;
+        this.appSettingsService = appSettingsService;
+        appSettingsService.getSettings().subscribe(function (data) { return _this.myAppSetting = data; });
+    }
+    StockService.prototype.getbyParentCompnayAllData = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/0';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.getbyParentCompnay = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/1';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.getbySuperStokist = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/2';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.getbyDistributor = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/3';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.getbyRetailer = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/4';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.getbyBusinessAssociate = function (id) {
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/' + id + '/5';
+        return this.myHttpclient.get(url);
+    };
+    StockService.prototype.stockTransfer = function (stocks) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/?v=1';
+        return this.myHttpclient.post(url, stocks, httpOptions).subscribe(function (data) {
+            console.log("POST Request is successful ", data);
+            return data;
+        }, function (error) {
+            console.log("Error", error);
+        });
+    };
+    ;
+    StockService.prototype.sendActivationReq = function (stocks) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/?v=2';
+        return this.myHttpclient.post(url, stocks, httpOptions).subscribe(function (data) {
+            console.log("POST Request is successful ", data);
+            return data;
+        }, function (error) {
+            console.log("Error", error);
+        });
+    };
+    ;
+    StockService.prototype.doActivation = function (stocks) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                'Content-Type': 'application/json'
+            })
+        };
+        var url = this.myAppSetting.baseUrl;
+        url = url + '/Stock/?v=3';
+        return this.myHttpclient.post(url, stocks, httpOptions).subscribe(function (data) {
+            console.log("POST Request is successful ", data);
+            return data;
+        }, function (error) {
+            console.log("Error", error);
+        });
+    };
+    ;
+    StockService.ctorParameters = function () { return [
+        { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+        { type: _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"] }
+    ]; };
+    StockService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _service_app_settings_service__WEBPACK_IMPORTED_MODULE_3__["AppSettingsService"]])
+    ], StockService);
+    return StockService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/service/super-stockist.service.ts":
 /*!***************************************************!*\
   !*** ./src/app/service/super-stockist.service.ts ***!
@@ -2755,7 +3587,7 @@ var SuperStockistService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0LWVkaXQvc3VwZXItc3RvY2tpc3QtZWRpdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2901,7 +3733,7 @@ var SuperStockistEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0LWxpc3Qvc3VwZXItc3RvY2tpc3QtbGlzdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2954,6 +3786,7 @@ var SuperStockistListComponent = /** @class */ (function () {
         //this.filterCriteria.Lname='';
         //this.filterCriteria.Email='';
         var parentCompanyId = this.AuthService.getParentCompanyId();
+        console.log(parentCompanyId);
         this.superStockistService.getDataAll(parentCompanyId)
             .subscribe(function (data) {
             _this.superStockists = data;
@@ -2987,7 +3820,7 @@ var SuperStockistListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3N1cGVyLXN0b2NraXN0L3N1cGVyLXN0b2NraXN0LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -3113,51 +3946,6 @@ var SuperStockistComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/tran-assign-stock/tran-assign-stock.component.css":
-/*!*******************************************************************!*\
-  !*** ./src/app/tran-assign-stock/tran-assign-stock.component.css ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n"
-
-/***/ }),
-
-/***/ "./src/app/tran-assign-stock/tran-assign-stock.component.ts":
-/*!******************************************************************!*\
-  !*** ./src/app/tran-assign-stock/tran-assign-stock.component.ts ***!
-  \******************************************************************/
-/*! exports provided: TranAssignStockComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TranAssignStockComponent", function() { return TranAssignStockComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var TranAssignStockComponent = /** @class */ (function () {
-    function TranAssignStockComponent() {
-    }
-    TranAssignStockComponent.prototype.ngOnInit = function () {
-    };
-    TranAssignStockComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-tran-assign-stock',
-            template: __webpack_require__(/*! raw-loader!./tran-assign-stock.component.html */ "./node_modules/raw-loader/index.js!./src/app/tran-assign-stock/tran-assign-stock.component.html"),
-            styles: [__webpack_require__(/*! ./tran-assign-stock.component.css */ "./src/app/tran-assign-stock/tran-assign-stock.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], TranAssignStockComponent);
-    return TranAssignStockComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -3225,3 +4013,4 @@ module.exports = __webpack_require__(/*! D:\Debdeep\Mywork\ZT-Web\src\main.ts */
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
+//# sourceMappingURL=main-es5.js.map
